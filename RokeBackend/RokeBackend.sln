@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32014.148
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RokeBackend", "RokeBackend\RokeBackend.csproj", "{DED28D35-52C6-46D6-A42B-D62547A167FA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Roke.Data", "Roke.Data\Roke.Data.csproj", "{45985B60-CAEE-4ECF-9D45-2B096DE4665D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Roke.Core", "Roke.Core\Roke.Core.csproj", "{16806785-AB21-4CEC-8200-D332F99F472C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DED28D35-52C6-46D6-A42B-D62547A167FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DED28D35-52C6-46D6-A42B-D62547A167FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DED28D35-52C6-46D6-A42B-D62547A167FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DED28D35-52C6-46D6-A42B-D62547A167FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45985B60-CAEE-4ECF-9D45-2B096DE4665D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45985B60-CAEE-4ECF-9D45-2B096DE4665D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45985B60-CAEE-4ECF-9D45-2B096DE4665D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45985B60-CAEE-4ECF-9D45-2B096DE4665D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{16806785-AB21-4CEC-8200-D332F99F472C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16806785-AB21-4CEC-8200-D332F99F472C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16806785-AB21-4CEC-8200-D332F99F472C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16806785-AB21-4CEC-8200-D332F99F472C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {70132EB3-3287-4AD6-A591-7C0C735DDFFE}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,26 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "ded28d35-52c6-46d6-a42b-d62547a167fa": {
+      "ProjectGuid": "ded28d35-52c6-46d6-a42b-d62547a167fa",
+      "DisplayName": "RokeBackend",
+      "ColorIndex": 0
+    },
+    "45985b60-caee-4ecf-9d45-2b096de4665d": {
+      "ProjectGuid": "45985b60-caee-4ecf-9d45-2b096de4665d",
+      "DisplayName": "Roke.Data",
+      "ColorIndex": 1
+    },
+    "2e698502-045f-45f5-88f5-0f9960f16731": {
+      "ProjectGuid": "2e698502-045f-45f5-88f5-0f9960f16731",
+      "DisplayName": "Roke.Model",
+      "ColorIndex": 2
+    },
+    "16806785-ab21-4cec-8200-d332f99f472c": {
+      "ProjectGuid": "16806785-ab21-4cec-8200-d332f99f472c",
+      "DisplayName": "Roke.Core",
+      "ColorIndex": 3
+    }
+  },
+  "NextColorIndex": 4
+}

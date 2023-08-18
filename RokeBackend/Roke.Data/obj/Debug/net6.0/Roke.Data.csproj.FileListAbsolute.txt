@@ -1,0 +1,17 @@
+C:\Users\kevir\OneDrive\Documents\GitHub\roke_backend\RokeBackend\Roke.Data\bin\Debug\net6.0\Roke.Data.deps.json
+C:\Users\kevir\OneDrive\Documents\GitHub\roke_backend\RokeBackend\Roke.Data\bin\Debug\net6.0\Roke.Data.dll
+C:\Users\kevir\OneDrive\Documents\GitHub\roke_backend\RokeBackend\Roke.Data\bin\Debug\net6.0\ref\Roke.Data.dll
+C:\Users\kevir\OneDrive\Documents\GitHub\roke_backend\RokeBackend\Roke.Data\bin\Debug\net6.0\Roke.Data.pdb
+C:\Users\kevir\OneDrive\Documents\GitHub\roke_backend\RokeBackend\Roke.Data\bin\Debug\net6.0\Roke.Core.dll
+C:\Users\kevir\OneDrive\Documents\GitHub\roke_backend\RokeBackend\Roke.Data\bin\Debug\net6.0\Roke.Core.pdb
+C:\Users\kevir\OneDrive\Documents\GitHub\roke_backend\RokeBackend\Roke.Data\obj\Debug\net6.0\Roke.Data.csproj.AssemblyReference.cache
+C:\Users\kevir\OneDrive\Documents\GitHub\roke_backend\RokeBackend\Roke.Data\obj\Debug\net6.0\Roke.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kevir\OneDrive\Documents\GitHub\roke_backend\RokeBackend\Roke.Data\obj\Debug\net6.0\Roke.Data.AssemblyInfoInputs.cache
+C:\Users\kevir\OneDrive\Documents\GitHub\roke_backend\RokeBackend\Roke.Data\obj\Debug\net6.0\Roke.Data.AssemblyInfo.cs
+C:\Users\kevir\OneDrive\Documents\GitHub\roke_backend\RokeBackend\Roke.Data\obj\Debug\net6.0\Roke.Data.csproj.CoreCompileInputs.cache
+C:\Users\kevir\OneDrive\Documents\GitHub\roke_backend\RokeBackend\Roke.Data\obj\Debug\net6.0\Roke.Data.csproj.CopyComplete
+C:\Users\kevir\OneDrive\Documents\GitHub\roke_backend\RokeBackend\Roke.Data\obj\Debug\net6.0\Roke.Data.dll
+C:\Users\kevir\OneDrive\Documents\GitHub\roke_backend\RokeBackend\Roke.Data\obj\Debug\net6.0\ref\Roke.Data.dll
+C:\Users\kevir\OneDrive\Documents\GitHub\roke_backend\RokeBackend\Roke.Data\obj\Debug\net6.0\Roke.Data.pdb
+C:\Users\kevir\OneDrive\Documents\GitHub\roke_backend\RokeBackend\Roke.Data\bin\Debug\net6.0\Roke.Data.runtimeconfig.json
+C:\Users\kevir\OneDrive\Documents\GitHub\roke_backend\RokeBackend\Roke.Data\obj\Debug\net6.0\Roke.Data.genruntimeconfig.cache

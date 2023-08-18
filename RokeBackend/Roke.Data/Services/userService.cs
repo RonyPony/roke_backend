@@ -7,11 +7,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using RokeBackend.core.Contracts;
 
 namespace RokeBackend.data.Services
 {
     public class UserService : IUserService
     {
+        private readonly IUserRepository _repo;
+
+        public UserService(IUserRepository repo)
+        {
+            _repo = repo;
+        }
+
         public Task<int> DeleteUser(Guid userId)
         {
             throw new NotImplementedException();
@@ -29,7 +37,7 @@ namespace RokeBackend.data.Services
 
         public Task<user> getUserByuser(string user)
         {
-            throw new NotImplementedException();
+            return _repo.getUserByuser(user);
         }
 
         public Task removeContactInfo(int contactInfoId)

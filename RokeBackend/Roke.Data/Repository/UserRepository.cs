@@ -79,9 +79,18 @@ namespace RokeBackend.data.Repository
             }
         }
 
-        public Task<user> getUserByuser(string user)
+        public async Task<user> getUserByuser(string user)
         {
-            throw new NotImplementedException();
+            try
+            {
+                user foundUser = _context.users.Where((pp) => pp.username == user).FirstOrDefault();
+                return foundUser;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         public async Task<int> RemoveUser(Guid UserId)

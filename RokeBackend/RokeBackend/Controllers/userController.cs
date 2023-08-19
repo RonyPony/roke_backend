@@ -39,7 +39,7 @@ namespace RokeBackend.Controllers
             //string user = data.usuario.ToString();
             //string password = data.password.ToString();
             //Guid userId = await _userService.
-            user user = await _userService.getUserByuser(optData.user);
+            user user = await _userService.getUserByuser(optData.username);
 
             //usuario usuario = usuario.DB().Where(x => x.user == user && x.password == password).FirstOrDefault();
 

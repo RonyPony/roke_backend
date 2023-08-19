@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
-
+using Roke.Core.Model;
 using RokeBackend.Model;
 
 namespace RokeBackend.data.DataContext
@@ -24,6 +24,7 @@ namespace RokeBackend.data.DataContext
         //}
 
         public DbSet<user> users { get; set; }
+        public DbSet<Ticket>tickets{get;set;}
        
     }
 }

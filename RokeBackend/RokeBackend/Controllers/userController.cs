@@ -30,8 +30,6 @@ namespace RokeBackend.Controllers
         [AllowAnonymous]
         [HttpPost]
         [Route("login")]
-
-
         public async Task<IActionResult> Login([FromBody] LoginDto optData)
         {
             //var data = JsonConvert.DeserializeObject<dynamic>(optData.ToString());

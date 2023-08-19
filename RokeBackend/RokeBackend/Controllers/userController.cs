@@ -30,19 +30,9 @@ namespace RokeBackend.Controllers
         [AllowAnonymous]
         [HttpPost]
         [Route("login")]
-
-
         public async Task<IActionResult> Login([FromBody] LoginDto optData)
         {
-            //var data = JsonConvert.DeserializeObject<dynamic>(optData.ToString());
-
-            //string user = data.usuario.ToString();
-            //string password = data.password.ToString();
-            //Guid userId = await _userService.
-            user user = await _userService.getUserByuser(optData.user);
-
-            //usuario usuario = usuario.DB().Where(x => x.user == user && x.password == password).FirstOrDefault();
-
+            user user = await _userService.getUserByuser(optData.username);
             if (user == null)
             {
                 return Unauthorized(new

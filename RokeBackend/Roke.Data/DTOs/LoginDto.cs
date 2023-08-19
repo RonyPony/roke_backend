@@ -9,7 +9,7 @@ namespace RokeBackend.data.DTOs
 {
     public class LoginDto
     {
-        public string user { get; set; }
+        public string username { get; set; }
 
         public string password { get; set; }
     }

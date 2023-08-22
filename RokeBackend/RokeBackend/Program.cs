@@ -37,6 +37,8 @@ builder.Services.AddCors(options =>
 builder.Services.AddTransient<IUserRepository, UserRepository>();
 builder.Services.AddTransient<ITicketRepository, TicketRepository>();
 builder.Services.AddTransient<ITicketService, TicketService>();
+builder.Services.AddTransient<IUsuarioRepository, UsuarioRepository>();
+builder.Services.AddTransient<IUsuarioService, UsuarioService>();
 builder.Services.AddTransient<IUserService, UserService>();
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
 {

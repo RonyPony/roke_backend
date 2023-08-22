@@ -25,6 +25,7 @@ namespace RokeBackend.data.DataContext
 
         public DbSet<user> users { get; set; }
         public DbSet<Ticket>tickets{get;set;}
-       
+     
+
     }
 }

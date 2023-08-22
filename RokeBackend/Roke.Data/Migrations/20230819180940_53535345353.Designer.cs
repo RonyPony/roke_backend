@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using RokeBackend.data.DataContext;
 
@@ -11,9 +12,10 @@ using RokeBackend.data.DataContext;
 namespace Roke.Data.Migrations
 {
     [DbContext(typeof(RokeContext))]
-    partial class RokeContextModelSnapshot : ModelSnapshot
+    [Migration("20230819180940_53535345353")]
+    partial class _53535345353
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -46,10 +48,6 @@ namespace Roke.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("localidad")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<int>("status")
                         .HasColumnType("int");
 
@@ -72,25 +70,6 @@ namespace Roke.Data.Migrations
 
                     b.Property<int>("IdUser")
                         .HasColumnType("int");
-
-                    b.Property<int>("Statusuario")
-                        .HasColumnType("int");
-
-                    b.Property<string>("apellido")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("cedula")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("contacto")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("nombre")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("password")
                         .IsRequired()

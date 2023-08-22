@@ -14,6 +14,7 @@ namespace Roke.Data.DTOs
         public Guid ticketTypeId { get; set; }
         public String contactName { get; set; }
         public String contactNumber { get; set; }
+        public String localidad     { get; set; }
         public bool contactHasWhatsapp { get; set; }
     }
 }

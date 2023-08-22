@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using RokeBackend.data.DataContext;
 
@@ -11,9 +12,10 @@ using RokeBackend.data.DataContext;
 namespace Roke.Data.Migrations
 {
     [DbContext(typeof(RokeContext))]
-    partial class RokeContextModelSnapshot : ModelSnapshot
+    [Migration("20230821224924_3442422243")]
+    partial class _3442422243
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -88,6 +90,9 @@ namespace Roke.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<Guid>("idUsuario")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<string>("nombre")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -106,7 +111,7 @@ namespace Roke.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("users");
+                    b.ToTable("user");
                 });
 #pragma warning restore 612, 618
         }

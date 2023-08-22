@@ -20,5 +20,6 @@ namespace Roke.Core.Model
         public String contactName { get; set; }
         public String contactNumber { get; set; }
         public bool contactHasWhatsapp { get; set; }
+        public string localidad { get; set; }
     }
 }

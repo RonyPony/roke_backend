@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
+using Newtonsoft.Json.Linq;
 using Roke.Core.Enums;
 using Roke.Core.Model;
 using Roke.Data.DTOs;
@@ -22,12 +23,14 @@ namespace RokeBackend.Controllers
     public class TicketController : ControllerBase
     {
         private readonly ITicketService _TicketService;
+        private readonly IUserService _userService;
         private readonly IConfiguration _Configuration;
 
-        public TicketController(ITicketService TicketService, IConfiguration configuration)
+        public TicketController(ITicketService TicketService, IConfiguration configuration, IUserService userService)
         {
             _TicketService = TicketService;
             _Configuration = configuration;
+            _userService = userService;
         }
 
 
@@ -43,6 +46,18 @@ namespace RokeBackend.Controllers
         public async Task<Ticket> GetAsync(Guid id)
         {
             return await _TicketService.GetTicketById(id);
+        }
+
+        // GET api/<TicketController>/5
+        [HttpGet("/assignedByUserId{userId}")]
+        public async Task<IEnumerable<Ticket>> getTicketAssignedByUserIdAsync(Guid userId)
+        {
+            user foundUser = await _userService.GetUserById(userId);
+            if (foundUser == null)
+            {
+                return (IEnumerable<Ticket>)NotFound();
+            }
+            return  _TicketService.GetTicketAssignedByUserId(userId);
         }
 
         // POST api/<TicketController>

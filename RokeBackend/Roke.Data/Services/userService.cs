@@ -32,8 +32,9 @@ namespace RokeBackend.data.Services
 
         public Task<user> GetUserById(Guid id)
         {
-            throw new NotImplementedException();
+            return _repo.getUserByIdAsync(id);
         }
+
 
         public Task<user> getUserByuser(string user)
         {

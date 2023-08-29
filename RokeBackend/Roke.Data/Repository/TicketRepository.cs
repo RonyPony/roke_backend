@@ -5,6 +5,7 @@ using RokeBackend.core.Contracts;
 using RokeBackend.data.DataContext;
 using RokeBackend.Model;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -52,6 +53,12 @@ namespace RokeBackend.data.Repository
             }
         }
 
+        public IEnumerable<Ticket> getTicketAssignedByUserId(Guid userId)
+        {
+            IEnumerable<Ticket> tickets = _context.tickets.ToList().Where(e=>e.assignedUserId==userId);
+            return tickets;
+        }
+
         public async Task<Ticket> getTicketByIdAsync(Guid id)
         {
             try
@@ -65,7 +72,7 @@ namespace RokeBackend.data.Repository
                 throw;
             }
         }
-
+        
 
         public async Task<int> RemoveTicket(Guid TicketId)
         {

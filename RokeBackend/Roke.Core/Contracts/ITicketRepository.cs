@@ -24,7 +24,11 @@ namespace RokeBackend.core.Contracts
 
 
         public IEnumerable<Ticket> getAllTickets();
+
+
         public Task<Ticket> getTicketByIdAsync(Guid id);
+
+        public IEnumerable<Ticket> getTicketAssignedByUserId(Guid userId);
 
         /// <summary>
         /// Update a specific record of branch data.

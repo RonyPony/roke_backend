@@ -42,6 +42,9 @@ builder.Services.AddTransient<IUsuarioService, UsuarioService>();
 builder.Services.AddTransient<ILocationRepository, LocationRepository>();
 builder.Services.AddTransient<ILocationService, LocationService>();
 builder.Services.AddTransient<IUserService, UserService>();
+builder.Services.AddTransient<IAssignedTaskRepository, AssignedTaskRepository>();
+builder.Services.AddTransient<IAssignedTicketService, AssignedTaskService>();
+
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
 {
     options.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters

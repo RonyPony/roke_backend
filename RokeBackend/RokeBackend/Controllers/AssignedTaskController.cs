@@ -19,14 +19,14 @@ namespace RokeBackend.Controllers
     [AllowAnonymous]
     [Route("api/[controller]")]
     [ApiController]
-    public class TicketController : ControllerBase
+    public class AssignedTaskController : ControllerBase
     {
-        private readonly ITicketService _TicketService;
+        private readonly IAssignedTicketService _AssignedTicketService;
         private readonly IConfiguration _Configuration;
 
-        public TicketController(ITicketService TicketService, IConfiguration configuration)
+        public AssignedTaskController(IAssignedTicketService AssignedTicketService, IConfiguration configuration)
         {
-            _TicketService = TicketService;
+            _AssignedTicketService = AssignedTicketService;
             _Configuration = configuration;
         }
 
@@ -35,14 +35,20 @@ namespace RokeBackend.Controllers
         [HttpGet]
         public IEnumerable<Ticket> Get()
         {
-            return _TicketService.GetAllTickets();
+            return _AssignedTicketService.GetAllAssignedTickets();
         }
 
         // GET api/<TicketController>/5
         [HttpGet("{id}")]
         public async Task<Ticket> GetAsync(Guid id)
         {
-            return await _TicketService.GetTicketById(id);
+            return await _AssignedTicketService.GetAssignedTicketById(id);
+        }
+
+        [HttpGet("/Assigned/{assignedUserId}")]
+        public async Task<Ticket> GetuserAsync(Guid assignedUserId)
+        {
+            return await _AssignedTicketService.GetAssignedTicketByIdUser(assignedUserId);
         }
 
         // POST api/<TicketController>
@@ -55,26 +61,30 @@ namespace RokeBackend.Controllers
             newTicket.contactNumber = value.contactNumber;
             newTicket.contactHasWhatsapp = value.contactHasWhatsapp;
             newTicket.locationId = value.locationId;
+            newTicket.assignedUserId = value.assignedUserId;
+            newTicket.photoId1 = value.photoId1;
+            newTicket.photoId2 = value.photoId2;
+            newTicket.photoId3 = value.photoId3;
             newTicket.createdOn = DateTime.Now;
             newTicket.updatedOn = DateTime.Now;
             newTicket.ticketType= value.ticketType;
-            newTicket.status = TicketStatus.Pending;
+            newTicket.status = TicketStatus.Assigned;
 
-            return await _TicketService.SaveTicket(newTicket);
+            return await _AssignedTicketService.SaveAssignedTicket(newTicket);
         }
 
         // PUT api/<TicketController>/5
         [HttpPut("{id}")]
         public async Task<Ticket> PutAsync(int id, [FromBody] Ticket value)
         {
-            return await _TicketService.UpdateTicket(value);
+            return await _AssignedTicketService.UpdateAssignedTicket(value);
         }
 
         // DELETE api/<TicketController>/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteAsync(Guid id)
         {
-            int deleted = await _TicketService.DeleteTicket(id);
+            int deleted = await _AssignedTicketService.DeleteAssignedTicket(id);
             if (deleted == 0)
             {
                 return BadRequest("Could not delete this ticket");

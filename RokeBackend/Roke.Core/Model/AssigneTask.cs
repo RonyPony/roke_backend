@@ -6,19 +6,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Roke.Data.DTOs
+namespace Roke.Core.Model
 {
-    public class TicketDTO
+    public class AssigneTask
     {
+        [Key]
+        public Guid Id { get; set; }
+        public TicketStatus status { get; set; }
+        public DateTime createdOn { get; set; }
+        public DateTime updatedOn { get; set; }
         public String description { get; set; }
-        public String ticketType { get; set; }
+        public Guid ticketTypeId { get; set;}
         public String contactName { get; set; }
         public String contactNumber { get; set; }
         public bool contactHasWhatsapp { get; set; }
-        public Guid locationId { get; set; }
-        public Guid assignedUserId { get; set; }
-        public Guid photoId1 { get; set; }
-        public Guid photoId2 { get; set; }
-        public Guid photoId3 { get; set; }
+        public string localidad { get; set; }
+        public string tecnico { get; set; }
+        
+
     }
 }

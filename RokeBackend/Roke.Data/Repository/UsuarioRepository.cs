@@ -81,7 +81,7 @@ namespace RokeBackend.data.Repository
         }
 
 
-        public async Task<int> RemoveTicket(Guid idUsuario)
+        public async Task<int> RemoveUsuario(Guid idUsuario)
         {
             try
             {
@@ -106,7 +106,7 @@ namespace RokeBackend.data.Repository
             }
         }
 
-        public Task<int> RemoveUsuario(Guid idUsuario)
+        public Task<int> RemoveUsuarios(Guid idUsuario)
         {
             throw new NotImplementedException();
         }

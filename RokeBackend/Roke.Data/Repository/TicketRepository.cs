@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Roke.Core.Model;
 using RokeBackend.core.Contracts;
 using RokeBackend.data.DataContext;
+using RokeBackend.core;
 using RokeBackend.Model;
 using System;
 using System.Collections;
@@ -10,6 +11,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Roke.Core.Enums;
 
 namespace RokeBackend.data.Repository
 {
@@ -39,19 +41,27 @@ namespace RokeBackend.data.Repository
 
         public async Task<Ticket> CreateAssignedTask(Ticket Ticket)
         {
-            Ticket assigned = new Ticket();
-            try
-            {
-                _context.tickets.Add(Ticket);
-                await _context.SaveChangesAsync();
-                assigned = Ticket;
-                return assigned;
-            }
-            catch (Exception ex)
-            {
-                _context.ChangeTracker.Clear();
-                return assigned;
-            }
+            TicketStatus status = Ticket.status;
+             user user = await _context.users.FindAsync(Ticket.assignedUserId);
+            Ticket = await _context.tickets.FindAsync(Ticket.Id);
+            Ticket.assignedUserId = user.Id;
+            Ticket.status = status;
+            _context.Entry(Ticket).State = EntityState.Modified;
+            
+            _context.SaveChanges();
+            return Ticket;
+            /* try
+             {
+                 _context.tickets.Add(Ticket);
+                 await _context.SaveChangesAsync();
+                 assigned = Ticket;
+                 return assigned;
+             }
+             catch (Exception ex)
+             {
+                 _context.ChangeTracker.Clear();
+                 return assigned;
+             }*/
         }
 
         public IEnumerable<Ticket> getAllTickets()

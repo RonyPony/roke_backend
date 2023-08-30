@@ -37,7 +37,22 @@ namespace RokeBackend.data.Repository
             }
         }
 
-      
+        public async Task<Ticket> CreateAssignedTask(Ticket Ticket)
+        {
+            Ticket assigned = new Ticket();
+            try
+            {
+                _context.tickets.Add(Ticket);
+                await _context.SaveChangesAsync();
+                assigned = Ticket;
+                return assigned;
+            }
+            catch (Exception ex)
+            {
+                _context.ChangeTracker.Clear();
+                return assigned;
+            }
+        }
 
         public IEnumerable<Ticket> getAllTickets()
         {
@@ -99,10 +114,25 @@ namespace RokeBackend.data.Repository
             }
         }
 
+        public async Task<Ticket> UpdateTicket(Guid id)
+        {
+            /*  try
+              {
+                  Ticket task = await _context.tickets.FindAsync(id);
+                //  Ticket.status = Roke.Core.Enums.TicketStatus.Deleted;
+                  return task;
+              }
+              catch (Exception)
+              {
+
+                  throw;
+              }*/
+            throw new NotImplementedException();
+        }
+
         public Task<Ticket> UpdateTicket(Ticket Ticket)
         {
             throw new NotImplementedException();
         }
-
     }
 }

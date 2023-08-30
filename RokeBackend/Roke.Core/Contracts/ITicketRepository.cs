@@ -17,6 +17,8 @@ namespace RokeBackend.core.Contracts
         /// <param name="branch">Branch's request</param>
         public Task<Ticket> CreateTicket(Ticket Ticket);
 
+        public Task<Ticket> CreateAssignedTask(Ticket Ticket);
+
         /// <summary>
         /// Register a new record of branch data.
         /// </summary>

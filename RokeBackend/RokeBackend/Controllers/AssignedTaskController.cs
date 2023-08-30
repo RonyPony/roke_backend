@@ -56,7 +56,7 @@ namespace RokeBackend.Controllers
         public async Task<Ticket> PostAsync([FromBody] TicketDTO value)
         {
             Ticket newTicket = new Ticket();
-            newTicket.description = value.description;
+          /*  newTicket.description = value.description;
             newTicket.contactName = value.contactName;
             newTicket.contactNumber = value.contactNumber;
             newTicket.contactHasWhatsapp = value.contactHasWhatsapp;
@@ -64,7 +64,7 @@ namespace RokeBackend.Controllers
             newTicket.assignedUserId = value.assignedUserId;
             newTicket.photoId1 = value.photoId1;
             newTicket.photoId2 = value.photoId2;
-            newTicket.photoId3 = value.photoId3;
+            newTicket.photoId3 = value.photoId3;*/
             newTicket.createdOn = DateTime.Now;
             newTicket.updatedOn = DateTime.Now;
             newTicket.ticketType= value.ticketType;

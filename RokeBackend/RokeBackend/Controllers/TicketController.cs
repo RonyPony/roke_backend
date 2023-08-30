@@ -55,7 +55,7 @@ namespace RokeBackend.Controllers
             user foundUser = await _userService.GetUserById(userId);
             if (foundUser == null)
             {
-                return (IEnumerable<Ticket>)NotFound();
+         //       return await IEnumerable<Ticket>();
             }
             return  _TicketService.GetTicketAssignedByUserId(userId);
         }
@@ -76,6 +76,19 @@ namespace RokeBackend.Controllers
             newTicket.status = TicketStatus.Pending;
 
             return await _TicketService.SaveTicket(newTicket);
+        }
+
+        [HttpPost("AssignTicket")]
+        public async Task<Ticket> PostAssignedAsync([FromBody] AssignedTaskDTO value)
+        {
+            Ticket newTicket = new Ticket();
+
+
+            newTicket.Id = value.Id;
+            newTicket.assignedUserId = value.assignedUserId;
+            newTicket.status = TicketStatus.Assigned;
+
+            return await _TicketService.SaveAssignedTicket(newTicket);
         }
 
         // PUT api/<TicketController>/5

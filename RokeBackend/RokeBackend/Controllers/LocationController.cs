@@ -53,7 +53,10 @@ namespace RokeBackend.Controllers
             newLocation.sucursal = value.sucursal;
             newLocation.latitude = value.latitude;
             newLocation.longitude = value.longitude;
-            newLocation.status= UsuarioStatus.Active;
+            newLocation.contactName = value.contactName;
+            newLocation.contactNumber = value.contactNumber;
+            newLocation.contactHasWhatsapp = value.contactHasWhatsapp;
+            newLocation.status= LocationStatus.Active;
           
 
             return await _LocationService.SaveLocation(newLocation);

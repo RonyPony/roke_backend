@@ -9,13 +9,13 @@ using System.Threading.Tasks;
 
 namespace RokeBackend.core.Contracts
 {
-    public interface ILocationRepository
+    public interface IPlanningRepository
     {
         /// <summary>
         /// Register a new record of branch data.
         /// </summary>
         /// <param name="branch">Branch's request</param>
-        public Task<location> CreateLocation(location location);
+        public Task<Ticket> CreatePlanning(Ticket Ticket);
 
         /// <summary>
         /// Register a new record of branch data.
@@ -23,20 +23,21 @@ namespace RokeBackend.core.Contracts
         /// <param name="branch">Branch's request</param>
 
 
-        public IEnumerable<location> getAllLocations();
-        public Task<location> getLocationByIdAsync(Guid id);
+        public IEnumerable<Ticket> getAllPlannings();
+        public Task<Ticket> getPlanningByIdAsync(Guid id);
+        
 
         /// <summary>
         /// Update a specific record of branch data.
         /// </summary>
         /// <param name="branch">Branch's request</param>
-        public Task<location> UpdateLocation(location location);
+        public Task<Ticket> UpdatePlanning(Ticket Ticket);
 
         /// <summary>
         ///  Remove a specific record of branch data.
         /// </summary>
         /// <param name="branch">Branch's request</param>
-        public Task<int> RemoveLocation(Guid id);
+        public Task<int> RemovePlanning(Guid id);
     
     }
 }

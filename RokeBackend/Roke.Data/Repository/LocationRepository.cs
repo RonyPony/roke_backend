@@ -20,12 +20,12 @@ namespace RokeBackend.data.Repository
             _context = ctx;
         }
 
-        public Task<location> CreateLocation(location location)
+        public Task<location> CreateLocatio(location location)
         {
             throw new NotImplementedException();
         }
 
-        public async Task<location> CreateUsuario(location Location)
+        public async Task<location> CreateLocation(location Location)
         {
             location finaluser = new location();
             try
@@ -87,15 +87,15 @@ namespace RokeBackend.data.Repository
         }
 
 
-        public async Task<int> RemoveLocation(Guid idLocation)
+        public async Task<int> RemoveLocation(Guid id)
         {
             try
             {
                 try
                 {
-                    location location = await _context.location.FindAsync(idLocation);
+                    location location = await _context.location.FindAsync(id);
                     //_context.tickets.Remove(Ticket);
-                    location.status = Roke.Core.Enums.UsuarioStatus.Deleted;
+                    location.status = Roke.Core.Enums.LocationStatus.Deleted;
                     _context.SaveChanges();
                     return 1;
                 }

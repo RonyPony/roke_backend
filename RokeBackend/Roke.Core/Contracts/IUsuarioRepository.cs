@@ -30,7 +30,7 @@ namespace RokeBackend.core.Contracts
         /// Update a specific record of branch data.
         /// </summary>
         /// <param name="branch">Branch's request</param>
-        public Task<user> UpdateUsuario(user Usuario);
+        public Task<user> UpdateUsuario(user user);
 
         /// <summary>
         ///  Remove a specific record of branch data.

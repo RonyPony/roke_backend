@@ -4,11 +4,13 @@ using Roke.Core.Model;
 using RokeBackend.core.Contracts;
 using RokeBackend.data.DataContext;
 using RokeBackend.Model;
+using RokeBackend.data.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Roke.Data.DTOs;
 
 namespace RokeBackend.data.Repository
 {
@@ -116,9 +118,40 @@ namespace RokeBackend.data.Repository
             throw new NotImplementedException();
         }
 
-        public Task<user> UpdateUsuario(user Usuario)
+        public async Task UpdateUsuarios(Guid id)
+        {
+
+            _context.Entry(id).State = EntityState.Modified;
+            await _context.SaveChangesAsync();
+                
+           
+        }
+
+        public Task<user> UpdateUsuariso(user Usuario)
         {
             throw new NotImplementedException();
         }
+
+      
+
+     public async Task<user> UpdateUsuario(user user)
+        {
+            try
+            {
+                
+                 _context.users.Update(user);
+                await _context.SaveChangesAsync();
+                return user;
+            }
+            catch (Exception ex)
+            {
+                _context.ChangeTracker.Clear();
+                return user;
+            }
+
+
+        }
+
+     
     }
 }

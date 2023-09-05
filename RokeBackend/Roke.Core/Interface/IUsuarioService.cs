@@ -14,7 +14,7 @@ namespace RokeBackend.core.Interface
         public IEnumerable<user> GetAllUsuario();
         public Task<user> GetUsuarioById(Guid id);
         public Task<user> SaveUsuario(user usuario);
-        public Task<user> UpdateUsuario(user usuario);
+        public Task<user> UpdateUsuario(user user);
         public Task<int> DeleteUsuario(Guid idUsuario);
         IEnumerable<user> GetAllUsuarios();
     }

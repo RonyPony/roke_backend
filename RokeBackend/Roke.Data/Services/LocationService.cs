@@ -44,7 +44,7 @@ namespace RokeBackend.data.Services
 
 
 
-        public Task<location> SaveUsuario(location location)
+        public Task<location> SaveLocation(location location)
         {
             return _repo.CreateLocation(location);
         }
@@ -59,7 +59,7 @@ namespace RokeBackend.data.Services
             throw new NotImplementedException();
         }
 
-        public Task<location> SaveLocation(location locaton)
+        public Task<location> SaveLocatio(location locaton)
         {
             throw new NotImplementedException();
         }

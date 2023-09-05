@@ -55,7 +55,7 @@ namespace RokeBackend.Controllers
             newUser.cedula = value.cedula;
             newUser.contacto = value.contacto;
             newUser.username = value.username;
-            newUser.password = value.password;
+            
             newUser.rol = value.rol;
             newUser.Statusuario= UsuarioStatus.Active;
           
@@ -65,9 +65,21 @@ namespace RokeBackend.Controllers
 
         // PUT api/<TicketController>/5
         [HttpPut("{id}")]
-        public async Task<user> PutAsync(int id, [FromBody] user value)
+        public async Task PutAsync(Guid id, [FromBody] UsuarioDTO value)
         {
-            return await _UsuarioService.UpdateUsuario(value);
+            user user = new user();
+            user =  await _UsuarioService.GetUsuarioById(id);
+            user.nombre = value.nombre;
+            user.apellido = value.apellido;
+            user.cedula = value.cedula;
+            user.contacto = value.contacto;
+            user.username = value.username; 
+           
+            user.rol = value.rol;
+            
+                
+            _UsuarioService.UpdateUsuario(user);
+            
         }
 
         // DELETE api/<TicketController>/5

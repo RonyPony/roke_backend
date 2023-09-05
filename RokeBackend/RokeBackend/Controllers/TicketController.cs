@@ -66,9 +66,7 @@ namespace RokeBackend.Controllers
         {
             Ticket newTicket = new Ticket();
             newTicket.description = value.description;
-            newTicket.contactName = value.contactName;
-            newTicket.contactNumber = value.contactNumber;
-            newTicket.contactHasWhatsapp = value.contactHasWhatsapp;
+        
             newTicket.locationId = value.locationId;
             newTicket.createdOn = DateTime.Now;
             newTicket.updatedOn = DateTime.Now;

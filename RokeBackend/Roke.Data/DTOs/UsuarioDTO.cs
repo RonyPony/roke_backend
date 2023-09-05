@@ -10,6 +10,7 @@ namespace Roke.Data.DTOs
 {
     public class UsuarioDTO
     {
+
         public String nombre { get; set; }
         public String apellido { get; set; }
         public String cedula { get; set; }
@@ -17,6 +18,6 @@ namespace Roke.Data.DTOs
         public String rol { get; set; }
         public String status { get; set; }
         public string username { get; set; }
-        public string password { get; set; }
+        
     }
 }

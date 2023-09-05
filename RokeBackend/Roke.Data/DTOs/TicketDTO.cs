@@ -10,11 +10,14 @@ namespace Roke.Data.DTOs
 {
     public class TicketDTO
     {
+       
         public String description { get; set; }
-        public Guid ticketTypeId { get; set; }
-        public String contactName { get; set; }
-        public String contactNumber { get; set; }
-        public String localidad     { get; set; }
-        public bool contactHasWhatsapp { get; set; }
+        public String ticketType { get; set; }
+
+        public Guid locationId { get; set; }
+        public Guid assignedUserId { get; set; }
+        public Guid photoId1 { get; set; }
+        public Guid photoId2 { get; set; }
+        public Guid photoId3 { get; set; }
     }
 }

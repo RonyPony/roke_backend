@@ -12,6 +12,7 @@ namespace Roke.Core.Enums
         Assigned,
         Deleted,
         Closed,
-        Approved
+        Approved,
+        inprogress
     }
 }

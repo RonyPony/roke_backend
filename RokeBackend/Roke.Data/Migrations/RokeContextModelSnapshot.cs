@@ -28,16 +28,8 @@ namespace Roke.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<bool>("contactHasWhatsapp")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("contactName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("contactNumber")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<Guid>("assignedUserId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("createdOn")
                         .HasColumnType("datetime2");
@@ -46,15 +38,24 @@ namespace Roke.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("localidad")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<Guid>("locationId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("photoId1")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("photoId2")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("photoId3")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<int>("status")
                         .HasColumnType("int");
 
-                    b.Property<Guid>("ticketTypeId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<string>("ticketType")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("updatedOn")
                         .HasColumnType("datetime2");
@@ -70,8 +71,16 @@ namespace Roke.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("Idlocation")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<bool>("contactHasWhatsapp")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("contactName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("contactNumber")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("latitude")
                         .IsRequired()

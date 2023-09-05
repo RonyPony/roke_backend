@@ -54,9 +54,9 @@ namespace RokeBackend.data.Services
             return await _repo.UpdateUsuario(user);
         }
 
-        public Task<user> UpdateUsuario(user usuario)
+        public async Task<user> UpdateUsuario(user user)
         {
-            throw new NotImplementedException();
+            return await _repo.UpdateUsuario(user);
         }
     }
 }

@@ -17,6 +17,8 @@ namespace RokeBackend.core.Contracts
         /// <param name="branch">Branch's request</param>
         public Task<Ticket> CreateTicket(Ticket Ticket);
 
+        public Task<Ticket> CreateAssignedTask(Ticket Ticket);
+
         /// <summary>
         /// Register a new record of branch data.
         /// </summary>
@@ -24,7 +26,11 @@ namespace RokeBackend.core.Contracts
 
 
         public IEnumerable<Ticket> getAllTickets();
+
+
         public Task<Ticket> getTicketByIdAsync(Guid id);
+
+        public IEnumerable<Ticket> getTicketAssignedByUserId(Guid userId);
 
         /// <summary>
         /// Update a specific record of branch data.

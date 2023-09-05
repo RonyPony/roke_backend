@@ -32,6 +32,11 @@ namespace RokeBackend.data.Services
             return _repo.getAllTickets();
         }
 
+        public IEnumerable<Ticket> GetTicketAssignedByUserId(Guid userId)
+        {
+            return _repo.getTicketAssignedByUserId(userId);
+        }
+
         public Task<Ticket> GetTicketById(Guid id)
         {
             return _repo.getTicketByIdAsync(id);
@@ -43,10 +48,19 @@ namespace RokeBackend.data.Services
         {
             return _repo.CreateTicket(Ticket);
         }
+        public Task<Ticket> SaveAssignedTask(Ticket Ticket)
+        {
+            return _repo.CreateAssignedTask(Ticket);
+        }
 
         public async Task<Ticket> UpdateTicket(Ticket Ticket)
         {
             return await _repo.UpdateTicket(Ticket);
+        }
+
+        public Task<Ticket> SaveAssignedTicket(Ticket Ticket)
+        {
+            return _repo.CreateAssignedTask(Ticket);
         }
     }
 }

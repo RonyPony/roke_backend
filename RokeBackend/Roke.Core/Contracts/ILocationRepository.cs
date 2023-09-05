@@ -36,7 +36,7 @@ namespace RokeBackend.core.Contracts
         ///  Remove a specific record of branch data.
         /// </summary>
         /// <param name="branch">Branch's request</param>
-        public Task<int> RemoveLocation(Guid idLocation);
+        public Task<int> RemoveLocation(Guid id);
     
     }
 }

@@ -7,12 +7,16 @@ namespace RokeBackend.Model
     {
         [Key]
         public Guid Id { get; set; }
-        public Guid Idlocation { get; set; }
+       
+      
         public string sucursal { get; set; }
         public string latitude { get; set; }
         public string longitude { get; set; }
-        public UsuarioStatus status { get; set; }
-      
+        public LocationStatus status { get; set; }
+        public String contactName { get; set; }
+        public String contactNumber { get; set; }
+        public bool contactHasWhatsapp { get; set; }
+
 
 
 

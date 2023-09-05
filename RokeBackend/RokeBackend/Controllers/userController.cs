@@ -84,6 +84,7 @@ namespace RokeBackend.Controllers
             {
                 success = true,
                 message = "Exito",
+                id = user.Id,
                 result = new JwtSecurityTokenHandler().WriteToken(token)
             });
 

@@ -14,7 +14,7 @@ namespace Roke.Data.DTOs
         public String sucursal { get; set; }
         public String latitude { get; set; }
         public String longitude { get; set; }
-   
+        public String status { get; set; }
         public String contactName { get; set; }
         public String contactNumber { get; set; }
         public bool contactHasWhatsapp { get; set; }

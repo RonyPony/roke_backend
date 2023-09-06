@@ -8,6 +8,8 @@ using RokeBackend.core.Interface;
 using RokeBackend.data.DTOs;
 using RokeBackend.data.Services;
 using RokeBackend.Model;
+using System.Collections;
+using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
@@ -33,16 +35,25 @@ namespace RokeBackend.Controllers
 
         // GET: api/<TicketController>
         [HttpGet]
-        public IEnumerable<user> Get()
+        public IEnumerable<UserDTO> Get()
         {
-            return _UsuarioService.GetAllUsuarios();
+            IEnumerable<user> values2 = _UsuarioService.GetAllUsuarios();
+            List<user> valueList2 = values2.ToList();
+            List<UserDTO>  dtoList = new List<UserDTO>();
+            foreach (user value in valueList2)
+            {
+                dtoList.Add(new UserDTO {id = value.Id, nombre = value.nombre, apellido = value.apellido, cedula = value.cedula, contacto = value.contacto ,rol=value.rol,status=value.Statusuario.ToString(),username=value.username});
+            }
+            return dtoList;
         }
 
         // GET api/<TicketController>/5
         [HttpGet("{id}")]
-        public async Task<user> GetAsync(Guid id)
+        public async Task<UserDTO> GetAsync(Guid id )
         {
-            return await _UsuarioService.GetUsuarioById(id);
+            user value = await _UsuarioService.GetUsuarioById(id);
+            UserDTO user =new UserDTO {id = value.Id,nombre = value.nombre, apellido = value.apellido, cedula = value.cedula, contacto = value.contacto, rol = value.rol, status = value.Statusuario.ToString(), username = value.username };            
+            return user;
         }
 
         // POST api/<TicketController>
@@ -55,7 +66,7 @@ namespace RokeBackend.Controllers
             newUser.cedula = value.cedula;
             newUser.contacto = value.contacto;
             newUser.username = value.username;
-            
+            newUser.password = value.password;
             newUser.rol = value.rol;
             newUser.Statusuario= UsuarioStatus.Active;
           
@@ -74,7 +85,7 @@ namespace RokeBackend.Controllers
             user.cedula = value.cedula;
             user.contacto = value.contacto;
             user.username = value.username; 
-           
+           user.password = value.password;  
             user.rol = value.rol;
             
                 

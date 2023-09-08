@@ -25,7 +25,7 @@ namespace RokeBackend.core.Contracts
         public IEnumerable<month> getAllMonths();
 
 
-        public Task<month> getMonthByIdAsync(Guid id);
+        public Task<month> getMonthByIdAsync(string value);
 
         /// <summary>
         /// Update a specific record of branch data.

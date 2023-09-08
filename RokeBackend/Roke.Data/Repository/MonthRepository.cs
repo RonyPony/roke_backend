@@ -37,11 +37,12 @@ namespace RokeBackend.data.Repository
             }
         }
 
-        public async Task<month> getMonthByIdAsync(Guid id)
+        public async Task<month> getMonthByIdAsync(string value)
         {
             try
             {
-                month month = await _context.month.FindAsync(id);
+              
+                month month = await _context.month.FirstOrDefaultAsync(u => u.Month == value);
                 return month;
             }
             catch (Exception)

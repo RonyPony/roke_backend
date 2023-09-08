@@ -39,10 +39,10 @@ namespace RokeBackend.Controllers
         }
 
         // GET api/<TicketController>/5
-        [HttpGet("{id}")]
-        public async Task<month> GetAsync(Guid id)
+        [HttpGet("month")]
+        public async Task<month> GetAsync(string value)
         {
-            return await _MonthService.GetMonthById(id);
+            return await _MonthService.GetMonthById(value);
         }
 
       

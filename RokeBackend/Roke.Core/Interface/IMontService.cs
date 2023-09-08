@@ -12,7 +12,7 @@ namespace RokeBackend.core.Interface
     public interface IMonthService
     {
         public IEnumerable<month> GetAllMonths();
-        public Task<month> GetMonthById(Guid id);
+        public Task<month> GetMonthById(string value);
 
         
     }

@@ -30,14 +30,14 @@ namespace RokeBackend.data.Services
             return _repo.getAllMonths();
         }
 
-        public Task<month> GetMonthById(Guid id)
+        public Task<month> GetMonthById(string value)
         {
-            return _repo.getMonthByIdAsync(id);
+            return _repo.getMonthByIdAsync(value);
         }
 
-        public Task<month> GetMonthnById(Guid id)
+        public Task<month> GetMonthnById(string value)
         {
-            return _repo.getMonthByIdAsync(id);
+            return _repo.getMonthByIdAsync(value);
         }
 
      

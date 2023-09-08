@@ -9,35 +9,29 @@ using System.Threading.Tasks;
 
 namespace RokeBackend.core.Contracts
 {
-    public interface IInventoryRepository
+    public interface IMonthRepository
     {
         /// <summary>
         /// Register a new record of branch data.
         /// </summary>
         /// <param name="branch">Branch's request</param>
-        public Task<Inventory> CreateInventory(Inventory Inventory);
+
 
         /// <summary>
         /// Register a new record of branch data.
         /// </summary>
         /// <param name="branch">Branch's request</param>
 
+        public IEnumerable<month> getAllMonths();
 
-        public IEnumerable<Inventory> getAllInventorys();
-        public Task<Inventory> getInventoryByIdAsync(Guid id);
-        
+
+        public Task<month> getMonthByIdAsync(Guid id);
 
         /// <summary>
         /// Update a specific record of branch data.
         /// </summary>
         /// <param name="branch">Branch's request</param>
-        public Task<Inventory> UpdateInventory(Inventory Inventory);
 
-        /// <summary>
-        ///  Remove a specific record of branch data.
-        /// </summary>
-        /// <param name="branch">Branch's request</param>
-        public Task<int> RemoveInventory(Guid id);
     
     }
 }

@@ -1,14 +1,18 @@
 ﻿using Roke.Core.Enums;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace RokeBackend.Model
+namespace Roke.Data.DTOs
 {
-    public class Inventory
+    public class InventoryDTO
     {
-        [Key]
         public Guid Id { get; set; }
-       
-      
+
+
         public string sucursal { get; set; }
         public string ItemCode { get; set; }
         public string InstallDate { get; set; }
@@ -22,10 +26,6 @@ namespace RokeBackend.Model
         public string Model_Conden { get; set; }
         public string Model_evap { get; set; }
         public string item_type { get; set; }
-
-
-
-
 
 
     }

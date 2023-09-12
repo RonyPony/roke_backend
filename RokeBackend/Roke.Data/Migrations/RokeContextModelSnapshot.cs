@@ -112,9 +112,12 @@ namespace Roke.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("order")
+                        .HasColumnType("int");
+
                     b.HasKey("id");
 
-                    b.ToTable("month");
+                    b.ToTable("months");
                 });
 
             modelBuilder.Entity("RokeBackend.Model.user", b =>

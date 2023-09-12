@@ -12,8 +12,8 @@ using RokeBackend.data.DataContext;
 namespace Roke.Data.Migrations
 {
     [DbContext(typeof(RokeContext))]
-    [Migration("20230829231714_34424000000")]
-    partial class _34424000000
+    [Migration("20230912032021_233")]
+    partial class _233
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -32,17 +32,6 @@ namespace Roke.Data.Migrations
 
                     b.Property<Guid>("assignedUserId")
                         .HasColumnType("uniqueidentifier");
-
-                    b.Property<bool>("contactHasWhatsapp")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("contactName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("contactNumber")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("createdOn")
                         .HasColumnType("datetime2");
@@ -84,8 +73,16 @@ namespace Roke.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("Idlocation")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<bool>("contactHasWhatsapp")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("contactName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("contactNumber")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("latitude")
                         .IsRequired()
@@ -105,6 +102,24 @@ namespace Roke.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("location");
+                });
+
+            modelBuilder.Entity("RokeBackend.Model.month", b =>
+                {
+                    b.Property<Guid>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Month")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("order")
+                        .HasColumnType("int");
+
+                    b.HasKey("id");
+
+                    b.ToTable("months");
                 });
 
             modelBuilder.Entity("RokeBackend.Model.user", b =>

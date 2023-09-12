@@ -7,11 +7,10 @@ namespace RokeBackend.Model
     {
         [Key]
         public Guid Id { get; set; }
-        public Guid Idlocation { get; set; }
-        public string sucursal { get; set; }
-        public string latitude { get; set; }
-        public string longitude { get; set; }
-        public UsuarioStatus status { get; set; }
+        public Guid idInventario  { get; set; }
+        public Guid idMonth { get; set; }
+
+       
       
 
 

@@ -27,7 +27,7 @@ namespace RokeBackend.data.Repository
         {
             try
             {
-                var month = _context.month.ToList();
+                var month = _context.months.OrderBy(item => item.order).ToList();
                 return month;
             }
             catch (Exception)
@@ -42,7 +42,7 @@ namespace RokeBackend.data.Repository
             try
             {
               
-                month month = await _context.month.FirstOrDefaultAsync(u => u.Month == value);
+                month month = await _context.months.FirstOrDefaultAsync(u => u.Month == value);
                 return month;
             }
             catch (Exception)

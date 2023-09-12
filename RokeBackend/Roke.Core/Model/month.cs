@@ -7,6 +7,7 @@ namespace RokeBackend.Model
         [Key]
         public Guid id { get; set; }
         public string Month { get; set; }
-    
+        public int order { get; set; }
+
     }
 }

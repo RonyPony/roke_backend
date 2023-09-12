@@ -47,6 +47,7 @@ builder.Services.AddTransient<IAssignedTicketService, AssignedTaskService>();
 builder.Services.AddTransient<IInventoryRepository, InventoryRepository>();
 builder.Services.AddTransient<IMonthRepository, MonthRepository>();
 builder.Services.AddTransient<IMonthService, MonthService>();
+builder.Services.AddTransient<IPlanningRepository, PlanningRepository>();
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
 {

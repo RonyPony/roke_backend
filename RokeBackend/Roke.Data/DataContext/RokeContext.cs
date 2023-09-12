@@ -30,6 +30,7 @@ namespace RokeBackend.data.DataContext
         // public DbSet<Inventory> Inventory1 { get; set; }
 
         public DbSet<month> months { get; set; }
+        public DbSet<planning> plannings { get; set; }
 
 
     }

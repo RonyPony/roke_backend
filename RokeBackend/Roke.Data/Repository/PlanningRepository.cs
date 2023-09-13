@@ -68,7 +68,7 @@ namespace RokeBackend.data.Repository
             }
         }
 
-        public async Task<user> getUsuarioByIdAsync(Guid id)
+        public async Task<user> getPlanningByIdAsync(Guid id)
         {
             try
             {

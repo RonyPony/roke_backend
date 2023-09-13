@@ -11,11 +11,11 @@ namespace RokeBackend.core.Interface
 {
     public interface IPlanningService
     {
-        public IEnumerable<Inventory> GetAllPlannings();
-        public Task<Inventory> GetPlanningById(Guid id);
+        public IEnumerable<planning> GetAllPlannings();
+        public Task<planning> GetPlanningById(Guid id);
       
-        public Task<Inventory> SavePlanning(Inventory Inventory);
-        public Task<Inventory> UpdatePlanning(Inventory Inventory);
+        public Task<planning> SavePlanning(planning planning);
+        public Task<planning> UpdatePlanning(planning planning);
         public Task<int> DeletePlanning(Guid Id);
         
     }

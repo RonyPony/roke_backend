@@ -15,7 +15,7 @@ namespace RokeBackend.core.Contracts
         /// Register a new record of branch data.
         /// </summary>
         /// <param name="branch">Branch's request</param>
-        public Task<Ticket> CreatePlanning(Ticket Ticket);
+        public Task<planning> CreatePlanning(planning planning);
 
         /// <summary>
         /// Register a new record of branch data.
@@ -23,15 +23,15 @@ namespace RokeBackend.core.Contracts
         /// <param name="branch">Branch's request</param>
 
 
-        public IEnumerable<Ticket> getAllPlannings();
-        public Task<Ticket> getPlanningByIdAsync(Guid id);
+        public IEnumerable<planning> getAllPlannings();
+        public Task<planning> getPlanningByIdAsync(Guid id);
         
 
         /// <summary>
         /// Update a specific record of branch data.
         /// </summary>
         /// <param name="branch">Branch's request</param>
-        public Task<Ticket> UpdatePlanning(Ticket Ticket);
+        public Task<planning> UpdatePlanning(planning planning);
 
         /// <summary>
         ///  Remove a specific record of branch data.

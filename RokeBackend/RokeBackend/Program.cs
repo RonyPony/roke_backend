@@ -48,6 +48,10 @@ builder.Services.AddTransient<IInventoryRepository, InventoryRepository>();
 builder.Services.AddTransient<IMonthRepository, MonthRepository>();
 builder.Services.AddTransient<IMonthService, MonthService>();
 builder.Services.AddTransient<IPlanningRepository, PlanningRepository>();
+builder.Services.AddTransient<IPlanningService, PlanningService>();
+
+
+
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
 {

@@ -23,24 +23,23 @@ namespace RokeBackend.data.Repository
         }
         public async Task<planning> CreatePlanning(planning planning)
         {
-            planning finaluser = new planning();
+            planning plan = new planning();
             try
             {
                 _context.plannings.Add(planning);
                 await _context.SaveChangesAsync();
-                finaluser = planning;
-                return planning;
+                plan = planning;
+                return plan;
             }
             catch (Exception ex)
             {
                 _context.ChangeTracker.Clear();
-                return finaluser;
+                return plan;
             }
         }
 
-      
 
-        public IEnumerable<planning> getAllPlanning()
+        public IEnumerable<planning> getAllPlannings()
         {
             try
             {
@@ -54,26 +53,14 @@ namespace RokeBackend.data.Repository
             }
         }
 
-        public IEnumerable<user> getAllUsuarios()
+       
+
+        public async Task<planning> getPlanningByIdAsync(Guid id)
         {
             try
             {
-                var user = _context.users.ToList();
-                return user;
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
-        }
-
-        public async Task<user> getPlanningByIdAsync(Guid id)
-        {
-            try
-            {
-                user usuario = await _context.users.FindAsync(id);
-                return usuario;
+                planning plan = await _context.plannings.FindAsync(id);
+                return plan;
             }
             catch (Exception)
             {
@@ -83,15 +70,15 @@ namespace RokeBackend.data.Repository
         }
 
 
-        public async Task<int> RemoveUsuario(Guid idUsuario)
+        public async Task<int> RemovePlanning(Guid id)
         {
             try
             {
                 try
                 {
-                    user usuario = await _context.users.FindAsync(idUsuario);
+                    planning plan = await _context.plannings.FindAsync(id);
                     //_context.tickets.Remove(Ticket);
-                    usuario.Statusuario = Roke.Core.Enums.UsuarioStatus.Deleted;
+                    plan.status = Roke.Core.Enums.Status.Deleted;
                     _context.SaveChanges();
                     return 1;
                 }
@@ -108,73 +95,33 @@ namespace RokeBackend.data.Repository
             }
         }
 
-        public Task<int> RemoveUsuarios(Guid idUsuario)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<user> UpdateTicket(user user)
-        {
-            throw new NotImplementedException();
-        }
-
-        public async Task UpdateUsuarios(Guid id)
-        {
-
-            _context.Entry(id).State = EntityState.Modified;
-            await _context.SaveChangesAsync();
-                
-           
-        }
-
-        public Task<user> UpdateUsuariso(user Usuario)
-        {
-            throw new NotImplementedException();
-        }
+    
 
       
 
-     public async Task<user> UpdateUsuario(user user)
+  
+
+     
+      
+
+     public async Task<planning> UpdatePlanning(planning planning)
         {
             try
             {
                 
-                 _context.users.Update(user);
+                 _context.plannings.Update(planning);
                 await _context.SaveChangesAsync();
-                return user;
+                return planning;
             }
             catch (Exception ex)
             {
                 _context.ChangeTracker.Clear();
-                return user;
+                return planning;
             }
 
 
         }
 
-        public Task<Ticket> CreatePlanning(Ticket Ticket)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<Ticket> getAllPlannings()
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<Ticket> getPlanningByIdAsync(Guid id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<Ticket> UpdatePlanning(Ticket Ticket)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<int> RemovePlanning(Guid id)
-        {
-            throw new NotImplementedException();
-        }
+      
     }
 }

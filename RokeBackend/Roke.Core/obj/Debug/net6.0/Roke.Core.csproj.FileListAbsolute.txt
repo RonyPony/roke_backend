@@ -26,3 +26,17 @@ C:\proyectos\roke_backend\RokeBackend\Roke.Core\obj\Debug\net6.0\refint\Roke.Cor
 C:\proyectos\roke_backend\RokeBackend\Roke.Core\obj\Debug\net6.0\Roke.Core.pdb
 C:\proyectos\roke_backend\RokeBackend\Roke.Core\obj\Debug\net6.0\Roke.Core.genruntimeconfig.cache
 C:\proyectos\roke_backend\RokeBackend\Roke.Core\obj\Debug\net6.0\ref\Roke.Core.dll
+C:\Users\User\Documents\GitHub\roke_backend\RokeBackend\Roke.Core\bin\Debug\net6.0\Roke.Core.deps.json
+C:\Users\User\Documents\GitHub\roke_backend\RokeBackend\Roke.Core\bin\Debug\net6.0\Roke.Core.runtimeconfig.json
+C:\Users\User\Documents\GitHub\roke_backend\RokeBackend\Roke.Core\bin\Debug\net6.0\Roke.Core.dll
+C:\Users\User\Documents\GitHub\roke_backend\RokeBackend\Roke.Core\bin\Debug\net6.0\Roke.Core.pdb
+C:\Users\User\Documents\GitHub\roke_backend\RokeBackend\Roke.Core\obj\Debug\net6.0\Roke.Core.csproj.AssemblyReference.cache
+C:\Users\User\Documents\GitHub\roke_backend\RokeBackend\Roke.Core\obj\Debug\net6.0\Roke.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Documents\GitHub\roke_backend\RokeBackend\Roke.Core\obj\Debug\net6.0\Roke.Core.AssemblyInfoInputs.cache
+C:\Users\User\Documents\GitHub\roke_backend\RokeBackend\Roke.Core\obj\Debug\net6.0\Roke.Core.AssemblyInfo.cs
+C:\Users\User\Documents\GitHub\roke_backend\RokeBackend\Roke.Core\obj\Debug\net6.0\Roke.Core.csproj.CoreCompileInputs.cache
+C:\Users\User\Documents\GitHub\roke_backend\RokeBackend\Roke.Core\obj\Debug\net6.0\Roke.Core.dll
+C:\Users\User\Documents\GitHub\roke_backend\RokeBackend\Roke.Core\obj\Debug\net6.0\refint\Roke.Core.dll
+C:\Users\User\Documents\GitHub\roke_backend\RokeBackend\Roke.Core\obj\Debug\net6.0\Roke.Core.pdb
+C:\Users\User\Documents\GitHub\roke_backend\RokeBackend\Roke.Core\obj\Debug\net6.0\Roke.Core.genruntimeconfig.cache
+C:\Users\User\Documents\GitHub\roke_backend\RokeBackend\Roke.Core\obj\Debug\net6.0\ref\Roke.Core.dll

@@ -72,15 +72,26 @@ namespace RokeBackend.data.Repository
 
        
 
-        public async Task<TemplateWithLocation> getTemplateByIdAsync(Guid id)
+        public async Task<templateWithLocationDetails> getTemplateByIdAsync(Guid id)
         {
             try
             {
                 Template plan = await _context.template.FindAsync(id);
-                TemplateWithLocation twl = new TemplateWithLocation();
-                List<TemplateLocationMapping> x =  _context.templateLocationMapping.Where((e)=>e.TemplateId == id).ToList();
+                templateWithLocationDetails twl = new templateWithLocationDetails();
+                List<location> loc = new List<location>();
+                twl.Name = plan.Name;
+                twl.createOn = plan.createOn;
+                twl.lastUpdate = plan.lastUpdate;
+                twl.status = plan.status;
 
-                twl.location = x;
+                List<TemplateLocationMapping> x =  _context.templateLocationMapping.Where((e)=>e.TemplateId == id).ToList();
+                foreach (var item in x)
+                {
+                    var tmpLocation = await _context.location.FindAsync(item.LocationId);
+                    loc.Add(tmpLocation);
+                }
+
+                twl.location = loc;
                 
                 return twl;
             }

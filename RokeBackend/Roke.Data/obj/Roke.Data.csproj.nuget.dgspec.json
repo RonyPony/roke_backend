@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\kevir\\OneDrive\\Documents\\GitHub\\roke_backend\\RokeBackend\\Roke.Data\\Roke.Data.csproj": {}
+    "C:\\Users\\User\\Documents\\GitHub\\roke_backend\\RokeBackend\\Roke.Data\\Roke.Data.csproj": {}
   },
   "projects": {
-    "C:\\Users\\kevir\\OneDrive\\Documents\\GitHub\\roke_backend\\RokeBackend\\Roke.Core\\Roke.Core.csproj": {
+    "C:\\Users\\User\\Documents\\GitHub\\roke_backend\\RokeBackend\\Roke.Core\\Roke.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\kevir\\OneDrive\\Documents\\GitHub\\roke_backend\\RokeBackend\\Roke.Core\\Roke.Core.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Documents\\GitHub\\roke_backend\\RokeBackend\\Roke.Core\\Roke.Core.csproj",
         "projectName": "Roke.Core",
-        "projectPath": "C:\\Users\\kevir\\OneDrive\\Documents\\GitHub\\roke_backend\\RokeBackend\\Roke.Core\\Roke.Core.csproj",
-        "packagesPath": "C:\\Users\\kevir\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\kevir\\OneDrive\\Documents\\GitHub\\roke_backend\\RokeBackend\\Roke.Core\\obj\\",
+        "projectPath": "C:\\Users\\User\\Documents\\GitHub\\roke_backend\\RokeBackend\\Roke.Core\\Roke.Core.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\User\\Documents\\GitHub\\roke_backend\\RokeBackend\\Roke.Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\kevir\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,6 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -81,7 +82,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -90,24 +92,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\kevir\\OneDrive\\Documents\\GitHub\\roke_backend\\RokeBackend\\Roke.Data\\Roke.Data.csproj": {
+    "C:\\Users\\User\\Documents\\GitHub\\roke_backend\\RokeBackend\\Roke.Data\\Roke.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\kevir\\OneDrive\\Documents\\GitHub\\roke_backend\\RokeBackend\\Roke.Data\\Roke.Data.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Documents\\GitHub\\roke_backend\\RokeBackend\\Roke.Data\\Roke.Data.csproj",
         "projectName": "Roke.Data",
-        "projectPath": "C:\\Users\\kevir\\OneDrive\\Documents\\GitHub\\roke_backend\\RokeBackend\\Roke.Data\\Roke.Data.csproj",
-        "packagesPath": "C:\\Users\\kevir\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\kevir\\OneDrive\\Documents\\GitHub\\roke_backend\\RokeBackend\\Roke.Data\\obj\\",
+        "projectPath": "C:\\Users\\User\\Documents\\GitHub\\roke_backend\\RokeBackend\\Roke.Data\\Roke.Data.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\User\\Documents\\GitHub\\roke_backend\\RokeBackend\\Roke.Data\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\kevir\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -116,14 +118,15 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\kevir\\OneDrive\\Documents\\GitHub\\roke_backend\\RokeBackend\\Roke.Core\\Roke.Core.csproj": {
-                "projectPath": "C:\\Users\\kevir\\OneDrive\\Documents\\GitHub\\roke_backend\\RokeBackend\\Roke.Core\\Roke.Core.csproj"
+              "C:\\Users\\User\\Documents\\GitHub\\roke_backend\\RokeBackend\\Roke.Core\\Roke.Core.csproj": {
+                "projectPath": "C:\\Users\\User\\Documents\\GitHub\\roke_backend\\RokeBackend\\Roke.Core\\Roke.Core.csproj"
               }
             }
           }
@@ -183,7 +186,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -192,7 +196,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }

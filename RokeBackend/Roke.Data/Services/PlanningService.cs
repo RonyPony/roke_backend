@@ -43,7 +43,7 @@ namespace RokeBackend.data.Services
             return _repo.getAllTemplates();
         }
 
-        public Task<TemplateWithLocation> GetTemplateById(Guid id)
+        public Task<templateWithLocationDetails> GetTemplateById(Guid id)
         {
             return _repo.getTemplateByIdAsync(id);
         }

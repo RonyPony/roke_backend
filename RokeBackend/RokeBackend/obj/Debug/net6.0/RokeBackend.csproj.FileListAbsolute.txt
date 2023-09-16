@@ -807,3 +807,4 @@ C:\Users\User\Documents\GitHub\roke_backend\RokeBackend\RokeBackend\obj\Debug\ne
 C:\Users\User\Documents\GitHub\roke_backend\RokeBackend\RokeBackend\obj\Debug\net6.0\RokeBackend.genruntimeconfig.cache
 C:\Users\User\Documents\GitHub\roke_backend\RokeBackend\RokeBackend\obj\Debug\net6.0\ref\RokeBackend.dll
 C:\Users\kevir\OneDrive\Documents\GitHub\roke_backend\RokeBackend\RokeBackend\bin\Debug\net6.0\CK.System.Collections.Generic.dll
+C:\Users\User\Documents\GitHub\roke_backend\RokeBackend\RokeBackend\bin\Debug\net6.0\CK.System.Collections.Generic.dll

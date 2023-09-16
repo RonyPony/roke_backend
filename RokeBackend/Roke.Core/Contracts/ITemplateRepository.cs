@@ -24,7 +24,7 @@ namespace RokeBackend.core.Contracts
 
 
         public IEnumerable<Template> getAllTemplates();
-        public Task<TemplateWithLocation> getTemplateByIdAsync(Guid id);
+        public Task<templateWithLocationDetails> getTemplateByIdAsync(Guid id);
         public Task<TemplateLocationMapping> asignLocations(TemplateLocationMapping data);
         
 

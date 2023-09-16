@@ -44,7 +44,7 @@ namespace RokeBackend.Controllers
 
         // GET api/<TicketController>/5
         [HttpGet("{id}")]
-        public async Task<TemplateWithLocation> GetAsync(Guid id )
+        public async Task<templateWithLocationDetails> GetAsync(Guid id )
         {
            return await _TemplateService.GetTemplateById(id); 
         }

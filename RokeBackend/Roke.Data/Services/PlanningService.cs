@@ -12,46 +12,55 @@ using Roke.Core.Model;
 
 namespace RokeBackend.data.Services
 {
-    public class PlanningService : IPlanningService
+    public class TemplateService : ITemplateService
     {
-        private readonly IPlanningRepository _repo;
+        private readonly ITemplateRepository _repo;
 
-        public PlanningService(IPlanningRepository repo)
+
+     
+
+
+        public TemplateService(ITemplateRepository repo)
         {
             _repo = repo;
         }
 
-        public Task<int> DeletePlanning(Guid id)
+        public Task<TemplateLocationMapping> AsignLocations(TemplateLocationMapping id)
         {
-            return _repo.RemovePlanning(id);
+            return _repo.asignLocations(id);
+        }
+
+        public Task<int> DeleteTemplate(Guid id)
+        {
+            return _repo.RemoveTemplate(id);
 
         }
 
       
 
-        public IEnumerable<planning> GetAllPlannings()
+        public IEnumerable<Template> GetAllTemplates()
         {
-            return _repo.getAllPlannings();
+            return _repo.getAllTemplates();
         }
 
-        public Task<planning> GetPlanningById(Guid id)
+        public Task<TemplateWithLocation> GetTemplateById(Guid id)
         {
-            return _repo.getPlanningByIdAsync(id);
+            return _repo.getTemplateByIdAsync(id);
         }
 
 
 
-        public Task<planning> SavePlanning(planning planning)
+        public Task<Template> SaveTemplate(Template Template)
         {
-            return _repo.CreatePlanning(planning);
+            return _repo.CreateTemplate(Template);
         }
 
-        public async Task<planning> UpdatePlaninng(planning planning)
+        public async Task<Template> UpdatePlaninng(Template Template)
         {
-            return await _repo.UpdatePlanning(planning);
+            return await _repo.UpdateTemplate(Template);
         }
 
-        public Task<planning> UpdatePlanning(planning planning)
+        public Task<Template> UpdateTemplate(Template Template)
         {
             throw new NotImplementedException();
         }

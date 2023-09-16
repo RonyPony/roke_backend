@@ -9,13 +9,13 @@ using System.Threading.Tasks;
 
 namespace RokeBackend.core.Contracts
 {
-    public interface IPlanningRepository
+    public interface ITemplateRepository
     {
         /// <summary>
         /// Register a new record of branch data.
         /// </summary>
         /// <param name="branch">Branch's request</param>
-        public Task<planning> CreatePlanning(planning planning);
+        public Task<Template> CreateTemplate(Template Template);
 
         /// <summary>
         /// Register a new record of branch data.
@@ -23,21 +23,22 @@ namespace RokeBackend.core.Contracts
         /// <param name="branch">Branch's request</param>
 
 
-        public IEnumerable<planning> getAllPlannings();
-        public Task<planning> getPlanningByIdAsync(Guid id);
+        public IEnumerable<Template> getAllTemplates();
+        public Task<TemplateWithLocation> getTemplateByIdAsync(Guid id);
+        public Task<TemplateLocationMapping> asignLocations(TemplateLocationMapping data);
         
 
         /// <summary>
         /// Update a specific record of branch data.
         /// </summary>
         /// <param name="branch">Branch's request</param>
-        public Task<planning> UpdatePlanning(planning planning);
+        public Task<Template> UpdateTemplate(Template Template);
 
         /// <summary>
         ///  Remove a specific record of branch data.
         /// </summary>
         /// <param name="branch">Branch's request</param>
-        public Task<int> RemovePlanning(Guid id);
+        public Task<int> RemoveTemplate(Guid id);
     
     }
 }

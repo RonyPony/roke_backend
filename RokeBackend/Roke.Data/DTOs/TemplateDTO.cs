@@ -8,16 +8,9 @@ using System.Threading.Tasks;
 
 namespace Roke.Data.DTOs
 {
-    public class PlanningDTO
+    public class TemplateDTO
     {
-       
-       
-        
-      
         public String name { get; set; }
-        public String status { get; set; }
-        public DateTime createOn { get; set; }
-        public DateTime lastUpdate { get; set; }
 
     }
 }

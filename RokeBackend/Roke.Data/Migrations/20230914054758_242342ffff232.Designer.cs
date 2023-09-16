@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using RokeBackend.data.DataContext;
 
@@ -11,9 +12,10 @@ using RokeBackend.data.DataContext;
 namespace Roke.Data.Migrations
 {
     [DbContext(typeof(RokeContext))]
-    partial class RokeContextModelSnapshot : ModelSnapshot
+    [Migration("20230914054758_242342ffff232")]
+    partial class _242342ffff232
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -133,6 +135,9 @@ namespace Roke.Data.Migrations
                     b.Property<DateTime>("createOn")
                         .HasColumnType("datetime2");
 
+                    b.Property<Guid>("idLocation")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<DateTime>("lastUpdate")
                         .HasColumnType("datetime2");
 
@@ -153,7 +158,7 @@ namespace Roke.Data.Migrations
                     b.Property<Guid>("LocationId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("TemplateId")
+                    b.Property<Guid>("PlanningI")
                         .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");

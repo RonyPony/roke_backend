@@ -14,21 +14,38 @@ using Roke.Data.DTOs;
 
 namespace RokeBackend.data.Repository
 {
-    public class PlanningRepository : IPlanningRepository
+    public class TemplateRepository : ITemplateRepository
     {
         private readonly RokeContext _context;
-        public PlanningRepository(RokeContext ctx)
+        public TemplateRepository(RokeContext ctx)
         {
             _context = ctx;
+
         }
-        public async Task<planning> CreatePlanning(planning planning)
+
+        public async Task<TemplateLocationMapping> asignLocations(TemplateLocationMapping data)
         {
-            planning plan = new planning();
             try
             {
-                _context.plannings.Add(planning);
+                _context.templateLocationMapping.Add(data);
                 await _context.SaveChangesAsync();
-                plan = planning;
+                return data;
+            }
+            catch (Exception ex)
+            {
+                _context.ChangeTracker.Clear();
+                return data;
+            }
+        }
+
+        public async Task<Template> CreateTemplate(Template Template)
+        {
+            Template plan = new Template();
+            try
+            {
+                _context.template.Add(Template);
+                await _context.SaveChangesAsync();
+                plan = Template;
                 return plan;
             }
             catch (Exception ex)
@@ -39,12 +56,12 @@ namespace RokeBackend.data.Repository
         }
 
 
-        public IEnumerable<planning> getAllPlannings()
+        public IEnumerable<Template> getAllTemplates()
         {
             try
             {
-                var planning = _context.plannings.ToList();
-                return planning;
+                var Template = _context.template.ToList();
+                return Template;
             }
             catch (Exception)
             {
@@ -55,12 +72,17 @@ namespace RokeBackend.data.Repository
 
        
 
-        public async Task<planning> getPlanningByIdAsync(Guid id)
+        public async Task<TemplateWithLocation> getTemplateByIdAsync(Guid id)
         {
             try
             {
-                planning plan = await _context.plannings.FindAsync(id);
-                return plan;
+                Template plan = await _context.template.FindAsync(id);
+                TemplateWithLocation twl = new TemplateWithLocation();
+                List<TemplateLocationMapping> x =  _context.templateLocationMapping.Where((e)=>e.TemplateId == id).ToList();
+
+                twl.location = x;
+                
+                return twl;
             }
             catch (Exception)
             {
@@ -70,13 +92,13 @@ namespace RokeBackend.data.Repository
         }
 
 
-        public async Task<int> RemovePlanning(Guid id)
+        public async Task<int> RemoveTemplate(Guid id)
         {
             try
             {
                 try
                 {
-                    planning plan = await _context.plannings.FindAsync(id);
+                    Template plan = await _context.template.FindAsync(id);
                     //_context.tickets.Remove(Ticket);
                     plan.status = Roke.Core.Enums.Status.Deleted;
                     _context.SaveChanges();
@@ -104,24 +126,23 @@ namespace RokeBackend.data.Repository
      
       
 
-     public async Task<planning> UpdatePlanning(planning planning)
+     public async Task<Template> UpdateTemplate(Template Template)
         {
             try
             {
                 
-                 _context.plannings.Update(planning);
+                 _context.template.Update(Template);
                 await _context.SaveChangesAsync();
-                return planning;
+                return Template;
             }
             catch (Exception ex)
             {
                 _context.ChangeTracker.Clear();
-                return planning;
+                return Template;
             }
 
 
         }
 
-      
     }
 }

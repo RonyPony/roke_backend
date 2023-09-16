@@ -15,23 +15,13 @@ namespace RokeBackend.data.DataContext
         {
         }
 
-        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        //{
-        //    //if (!optionsBuilder.IsConfigured)
-        //    //{
-        //    //    optionsBuilder.UseSqlServer(cnnstr);
-        //    //}
-        //}
 
         public DbSet<user> users { get; set; }
         public DbSet<Ticket>tickets{get;set;}
-
         public DbSet<location> location { get; set; }
-        // public DbSet<Inventory> Inventory1 { get; set; }
-
         public DbSet<month> months { get; set; }
-        public DbSet<planning> plannings { get; set; }
+        public DbSet<Template> template { get; set; }
 
-
+        public  DbSet<TemplateLocationMapping> templateLocationMapping { get; set; }
     }
 }

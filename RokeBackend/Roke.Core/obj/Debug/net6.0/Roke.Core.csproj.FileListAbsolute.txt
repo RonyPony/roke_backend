@@ -2,7 +2,6 @@ C:\Users\kevir\OneDrive\Documents\GitHub\roke_backend\RokeBackend\Roke.Core\bin\
 C:\Users\kevir\OneDrive\Documents\GitHub\roke_backend\RokeBackend\Roke.Core\bin\Debug\net6.0\Roke.Core.dll
 C:\Users\kevir\OneDrive\Documents\GitHub\roke_backend\RokeBackend\Roke.Core\bin\Debug\net6.0\ref\Roke.Core.dll
 C:\Users\kevir\OneDrive\Documents\GitHub\roke_backend\RokeBackend\Roke.Core\bin\Debug\net6.0\Roke.Core.pdb
-C:\Users\kevir\OneDrive\Documents\GitHub\roke_backend\RokeBackend\Roke.Core\obj\Debug\net6.0\Roke.Core.csproj.AssemblyReference.cache
 C:\Users\kevir\OneDrive\Documents\GitHub\roke_backend\RokeBackend\Roke.Core\obj\Debug\net6.0\Roke.Core.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\kevir\OneDrive\Documents\GitHub\roke_backend\RokeBackend\Roke.Core\obj\Debug\net6.0\Roke.Core.AssemblyInfoInputs.cache
 C:\Users\kevir\OneDrive\Documents\GitHub\roke_backend\RokeBackend\Roke.Core\obj\Debug\net6.0\Roke.Core.AssemblyInfo.cs
@@ -40,3 +39,4 @@ C:\Users\User\Documents\GitHub\roke_backend\RokeBackend\Roke.Core\obj\Debug\net6
 C:\Users\User\Documents\GitHub\roke_backend\RokeBackend\Roke.Core\obj\Debug\net6.0\Roke.Core.pdb
 C:\Users\User\Documents\GitHub\roke_backend\RokeBackend\Roke.Core\obj\Debug\net6.0\Roke.Core.genruntimeconfig.cache
 C:\Users\User\Documents\GitHub\roke_backend\RokeBackend\Roke.Core\obj\Debug\net6.0\ref\Roke.Core.dll
+C:\Users\kevir\OneDrive\Documents\GitHub\roke_backend\RokeBackend\Roke.Core\obj\Debug\net6.0\Roke.Core.csproj.AssemblyReference.cache

@@ -49,8 +49,8 @@ builder.Services.AddTransient<IMonthRepository, MonthRepository>();
 builder.Services.AddTransient<IMonthService, MonthService>();
 builder.Services.AddTransient<ITemplateRepository, TemplateRepository>();
 builder.Services.AddTransient<ITemplateService, TemplateService>();
-
-
+builder.Services.AddTransient<IBrigadeRepository, BrigadeRepository>();
+builder.Services.AddTransient<IBrigadeService, BrigadeService>();
 
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>

@@ -24,6 +24,8 @@ namespace RokeBackend.data.DataContext
 
         public  DbSet<TemplateLocationMapping> templateLocationMapping { get; set; }
         public DbSet<brigade> brigades { get; set; }
+
+        public DbSet<planning> planning { get; set; }
         public DbSet<brigadeAssigne> brigadeAssinge { get; set; }
     }
 }

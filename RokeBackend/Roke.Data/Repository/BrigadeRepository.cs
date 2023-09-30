@@ -39,10 +39,20 @@ namespace RokeBackend.data.Repository
                 return data;
             }
         }
-
-        public Task<brigadeDetails> asignBrigades(brigadeDetails data)
+    
+        public async Task<brigadeAssigne> asignBrigadesByTemplate(brigadeAssigne data)
         {
-            throw new NotImplementedException();
+           try
+            {
+                _context.brigadeAssinge.Add(data);
+                await _context.SaveChangesAsync();
+                return data;
+            }
+            catch (Exception ex)
+            {
+                _context.ChangeTracker.Clear();
+                return data;
+            }
         }
 
         public async Task<brigade> CreateBrigade(brigade brigade)

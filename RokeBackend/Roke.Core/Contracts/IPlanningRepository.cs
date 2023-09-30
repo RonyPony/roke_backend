@@ -9,13 +9,13 @@ using System.Threading.Tasks;
 
 namespace RokeBackend.core.Contracts
 {
-    public interface IBrigadeRepository
+    public interface IPlanningRepository
     {
         /// <summary>
         /// Register a new record of branch data.
         /// </summary>
         /// <param name="branch">Branch's request</param>
-        public Task<brigade> CreateBrigade(brigade brigade);
+        public Task<planning> CreatePlanning(planning planning);
 
         /// <summary>
         /// Register a new record of branch data.
@@ -23,23 +23,22 @@ namespace RokeBackend.core.Contracts
         /// <param name="branch">Branch's request</param>
 
 
-        public IEnumerable<brigade> getAllBrigades();
-        public Task<brigadeDetails> getBrigadeByIdAsync(Guid id);
-        public Task<brigadeAssigne> asignBrigades(brigadeAssigne data);
-        public Task<brigadeAssigne> asignBrigadesByTemplate(brigadeAssigne data);
-
+        public IEnumerable<planning> getAllPlannings();
+        public Task<planningDetails> getPlanningByIdAsync(Guid id);
+        public Task<planning> asignplannings(planning data);
+        
 
         /// <summary>
         /// Update a specific record of branch data.
         /// </summary>
         /// <param name="branch">Branch's request</param>
-        public Task<brigade> UpdateBrigade(brigade brigade);
+        public Task<planning> UpdatePlanning(planning brigade);
 
         /// <summary>
         ///  Remove a specific record of branch data.
         /// </summary>
         /// <param name="branch">Branch's request</param>
-        public Task<int> RemoveBrigade(Guid id);
+        public Task<int> RemovePlanning(Guid id);
     
     }
 }

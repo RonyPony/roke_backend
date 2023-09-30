@@ -30,7 +30,10 @@ namespace RokeBackend.data.Services
             return _repo.asignBrigades(data);
         }
 
-   
+        public Task<brigadeAssigne> asignBrigadesByTemplate(brigadeAssigne data)
+        {
+            throw new NotImplementedException();
+        }
 
         public Task<brigadeAssigne> AsignBrigadez(brigadeAssigne id)
         {

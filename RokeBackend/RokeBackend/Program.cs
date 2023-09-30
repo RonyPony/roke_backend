@@ -51,6 +51,8 @@ builder.Services.AddTransient<ITemplateRepository, TemplateRepository>();
 builder.Services.AddTransient<ITemplateService, TemplateService>();
 builder.Services.AddTransient<IBrigadeRepository, BrigadeRepository>();
 builder.Services.AddTransient<IBrigadeService, BrigadeService>();
+builder.Services.AddTransient<IPlanningRepository, PlanningRepository>();
+builder.Services.AddTransient<IPlanningService, PlanService>();
 
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>

@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using RokeBackend.data.DataContext;
 
@@ -11,9 +12,10 @@ using RokeBackend.data.DataContext;
 namespace Roke.Data.Migrations
 {
     [DbContext(typeof(RokeContext))]
-    partial class RokeContextModelSnapshot : ModelSnapshot
+    [Migration("20230930041707_23423423jj23433")]
+    partial class _23423423jj23433
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

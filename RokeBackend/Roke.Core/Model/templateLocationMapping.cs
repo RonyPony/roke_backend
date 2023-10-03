@@ -11,5 +11,6 @@ namespace RokeBackend.Model
         public Guid TemplateId { get; set; }  
         
         public Guid LocationId { get; set; }
+        public Status status { get; set; }
     }
 }

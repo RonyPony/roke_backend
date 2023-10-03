@@ -9,9 +9,6 @@ namespace RokeBackend.Model
 
 
 
-        public Status status { get; set; }
-
-        public DateTime createOn { get; set; }
-        public DateTime lastUpdate { get; set; }
+     
     }
 }

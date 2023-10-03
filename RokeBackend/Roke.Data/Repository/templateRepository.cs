@@ -77,7 +77,7 @@ namespace RokeBackend.data.Repository
             try
             {
                 Template plan = await _context.template.FindAsync(id);
-                templateWithLocationDetails twl = new templateWithLocationDetails();
+                templateWithLocationDetails twl = new templateWithLocationDetails(); 
                 List<location> loc = new List<location>();
                 twl.Name = plan.Name;
                 twl.createOn = plan.createOn;
@@ -87,7 +87,7 @@ namespace RokeBackend.data.Repository
                 List<TemplateLocationMapping> x =  _context.templateLocationMapping.Where((e)=>e.TemplateId == id).ToList();
                 foreach (var item in x)
                 {
-                    var tmpLocation = await _context.location.FindAsync(item.LocationId);
+                    var tmpLocation = _context.location.Where((e) => e.Id == item.LocationId && e.status == Roke.Core.Enums.LocationStatus.Active).FirstOrDefault();
                     loc.Add(tmpLocation);
                 }
 

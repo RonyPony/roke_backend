@@ -16,6 +16,8 @@ namespace RokeBackend.core.Interface
   
 
         public Task<planning> SavePlanning(planning planning);
+
+        public Task<planning> getPlanningById(Guid id);
         public Task<planning> UpdatePlanning(planning planning);
         public Task<int> DeletePlanning(Guid Id);
         

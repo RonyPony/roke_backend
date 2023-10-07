@@ -110,9 +110,18 @@ namespace RokeBackend.data.Repository
             }
         }
 
-        public Task<brigadeDetails> getBrigadeByIdAsync(Guid id)
+        public async Task<planning>  getPlanningById(Guid id)
         {
-            throw new NotImplementedException();
+            try
+            {
+                planning planning = await _context.planning.FindAsync(id);
+                return planning;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         public async Task<planningDetails> getPlanningByIdAsync(Guid id)
@@ -177,28 +186,25 @@ namespace RokeBackend.data.Repository
             throw new NotImplementedException();
         }
 
-        public async Task<brigade> UpdatePlanning(brigade brigade)
+        public async Task<planning> UpdatePlanning(planning planning)
         {
             try
             {
                 
-                 _context.brigades.Update(brigade);
+                 _context.planning.Update(planning);
                 await _context.SaveChangesAsync();
-                return brigade;
+                return planning;
             }
             catch (Exception ex)
             {
                 _context.ChangeTracker.Clear();
-                return brigade;
+                return planning;
             }
 
 
         }
 
-        public Task<planning> UpdatePlanning(planning brigade)
-        {
-            throw new NotImplementedException();
-        }
+       
 
       
     }

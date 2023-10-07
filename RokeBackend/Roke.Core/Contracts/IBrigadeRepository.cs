@@ -24,7 +24,9 @@ namespace RokeBackend.core.Contracts
 
 
         public IEnumerable<brigade> getAllBrigades();
-        public Task<brigadeDetails> getBrigadeByIdAsync(Guid id);
+        public Task<brigadeDetails> getBrigadeByIdByTechAsync(Guid id);
+        public Task<brigade> GetBrigadeById(Guid id);
+        
         public Task<brigadeAssigne> asignBrigades(brigadeAssigne data);
         public Task<brigadeAssigne> asignBrigadesByTemplate(brigadeAssigne data);
 

@@ -53,14 +53,20 @@ namespace RokeBackend.data.Services
             return _repo.getAllBrigades();
         }
 
-        public Task<brigadeDetails> GetBrigadeById(Guid id)
+        public Task<brigadeDetails> getBrigadeByIdByTechAsync(Guid id)
         {
-            return _repo.getBrigadeByIdAsync(id);
+            return _repo.getBrigadeByIdByTechAsync(id);
+        }
+        
+
+          public Task<brigade> GetBrigadeById(Guid id)
+        {
+            return _repo.GetBrigadeById(id);
         }
 
         public Task<brigadeDetails> GetTemplateById(Guid id)
         {
-            return _repo.getBrigadeByIdAsync(id);
+            return _repo.getBrigadeByIdByTechAsync(id);
         }
 
 

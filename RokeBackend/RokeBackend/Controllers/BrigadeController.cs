@@ -46,7 +46,7 @@ namespace RokeBackend.Controllers
         [HttpGet("{id}")]
         public async Task<brigadeDetails> GetAsync(Guid id )
         {
-           return await _BrigadeService.GetBrigadeById(id); 
+           return await _BrigadeService.getBrigadeByIdByTechAsync(id); 
         }
 
         // POST api/<TicketController>
@@ -94,8 +94,9 @@ namespace RokeBackend.Controllers
         public async Task PutAsync(Guid id, [FromBody] BrigadesDTO value )
         {
             brigade newplan = new brigade();
-       newplan.Name = value.Name;
-       newplan.lastUpdate = DateTime.Now;
+            newplan = await _BrigadeService.GetBrigadeById(id);
+            newplan.Name = value.Name;
+            newplan.lastUpdate = DateTime.Now;
 
 
 

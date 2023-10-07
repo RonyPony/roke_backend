@@ -46,7 +46,7 @@ namespace RokeBackend.Controllers
         [HttpGet("{id}")]
         public async Task<templateWithLocationDetails> GetAsync(Guid id )
         {
-           return await _TemplateService.GetTemplateById(id); 
+           return await _TemplateService.GetTemplateByIdAsync(id); 
         }
 
         // POST api/<TicketController>
@@ -94,8 +94,9 @@ namespace RokeBackend.Controllers
         public async Task PutAsync(Guid id, [FromBody] TemplateDTO value )
         {
             Template newplan = new Template();
-       newplan.Name = value.name;
-       newplan.lastUpdate = DateTime.Now;
+            newplan = await _TemplateService.getTemplateById(id); 
+            newplan.Name = value.name;
+            newplan.lastUpdate = DateTime.Now;
 
 
 

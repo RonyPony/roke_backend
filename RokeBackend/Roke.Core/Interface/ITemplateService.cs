@@ -12,9 +12,9 @@ namespace RokeBackend.core.Interface
     public interface ITemplateService
     {
         public IEnumerable<Template> GetAllTemplates();
-        public Task<templateWithLocationDetails> GetTemplateById(Guid id);
+        public Task<templateWithLocationDetails> GetTemplateByIdAsync(Guid id);
         public Task<TemplateLocationMapping> AsignLocations(TemplateLocationMapping id);
-
+        public Task<Template> getTemplateById(Guid id);
         public Task<Template> SaveTemplate(Template Template);
         public Task<Template> UpdateTemplate(Template Template);
         public Task<int> DeleteTemplate(Guid Id);

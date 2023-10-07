@@ -54,10 +54,14 @@ namespace RokeBackend.data.Services
         }
 
 
+        public  Task<planning> getPlanningById(Guid id)
+        {
+            return _repo.getPlanningById(id);
+        }
 
-    
 
-     
+
+
         public async Task<planning> UpdatePlanning(planning planning)
         {
             return await _repo.UpdatePlanning(planning);

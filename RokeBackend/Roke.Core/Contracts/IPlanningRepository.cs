@@ -25,6 +25,7 @@ namespace RokeBackend.core.Contracts
 
         public IEnumerable<planning> getAllPlannings();
         public Task<planningDetails> getPlanningByIdAsync(Guid id);
+        public Task<planning> getPlanningById(Guid id);
         public Task<planning> asignplannings(planning data);
         
 

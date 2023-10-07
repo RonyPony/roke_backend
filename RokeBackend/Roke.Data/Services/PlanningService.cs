@@ -43,12 +43,15 @@ namespace RokeBackend.data.Services
             return _repo.getAllTemplates();
         }
 
-        public Task<templateWithLocationDetails> GetTemplateById(Guid id)
+        public Task<templateWithLocationDetails> GetTemplateByIdAsync(Guid id)
         {
             return _repo.getTemplateByIdAsync(id);
         }
 
-
+        public Task<Template> getTemplateById(Guid id)
+        {
+            return _repo.getTemplateById(id);
+        }
 
         public Task<Template> SaveTemplate(Template Template)
         {
@@ -57,12 +60,12 @@ namespace RokeBackend.data.Services
 
         public async Task<Template> UpdatePlaninng(Template Template)
         {
-            return await _repo.UpdateTemplate(Template);
+            return await _repo.UpdateTemplate(Template); 
         }
 
-        public Task<Template> UpdateTemplate(Template Template)
+        public async Task<Template> UpdateTemplate(Template Template)
         {
-            throw new NotImplementedException();
+            return await _repo.UpdateTemplate(Template);
         }
     }
 }

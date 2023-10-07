@@ -55,6 +55,20 @@ namespace RokeBackend.data.Repository
             }
         }
 
+        public async Task<Template> getTemplateById(Guid id)
+        {
+            try
+            {
+                Template template = await _context.template.FindAsync(id);
+                return template;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
 
         public IEnumerable<Template> getAllTemplates()
         {
@@ -155,5 +169,6 @@ namespace RokeBackend.data.Repository
 
         }
 
+   
     }
 }

@@ -98,21 +98,49 @@ namespace RokeBackend.Controllers
 [HttpPut("{id}")]
         public async Task PutAsync(Guid id, [FromBody] PlanningDTO value )
         {
-            planning newplan = new planning();
-       newplan.Name = value.name;
-       newplan.lastUpdate = DateTime.Now;
+
+            foreach (var item in value.idBrigade)
+            {
+                planning newplan = new planning();
+                newplan = await _PlanningService.getPlanningById(id);
+                newplan.Name = value.name;
+                newplan.idBrigade = item;
+                newplan.idTemplate = value.idTemplate;
+                newplan.lastUpdate = DateTime.Now;
+                newplan.Status = Status.Active;
+
+                try
+                {
+                    await _PlanningService.UpdatePlanning(newplan);
+                }
+                catch (Exception ex)
+                {
+
+                    throw;
+                }
+            }
+
+            //return value;
+
+
+            /*planning newplan = new planning();
+            newplan = await _PlanningService.getPlanningById(id);
+            newplan.Name = value.name;
+            newplan.idTemplate = value.idTemplate;
+
+            newplan.lastUpdate = DateTime.Now;
 
 
 
             _PlanningService.UpdatePlanning(newplan);
 
         
+            */
 
 
 
 
-
-    }
+        }
 
         // DELETE api/<TicketController>/5
         [HttpDelete("{id}")]

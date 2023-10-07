@@ -12,7 +12,8 @@ namespace RokeBackend.core.Interface
     public interface IBrigadeService
     {
         public IEnumerable<brigade> GetAllBrigades();
-        public Task<brigadeDetails> GetBrigadeById(Guid id);
+        public Task<brigadeDetails> getBrigadeByIdByTechAsync(Guid id);
+        public Task<brigade> GetBrigadeById(Guid id);
         public Task<brigadeAssigne> AsignBrigade(brigadeAssigne id);
         public Task<brigadeAssigne> asignBrigadesByTemplate(brigadeAssigne data);
         public Task<brigade> SaveBrigade(brigade brigade);

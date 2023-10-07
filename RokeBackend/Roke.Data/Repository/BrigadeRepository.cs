@@ -87,8 +87,23 @@ namespace RokeBackend.data.Repository
             }
         }
 
-   
-        public async Task<brigadeDetails> getBrigadeByIdAsync(Guid id)
+
+        
+        public async Task<brigade> GetBrigadeById(Guid id)
+        {
+            try
+            {
+                brigade brigade = await _context.brigades.FindAsync(id);
+                return brigade;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        public async Task<brigadeDetails> getBrigadeByIdByTechAsync(Guid id)
         {
             try
             {

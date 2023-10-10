@@ -72,8 +72,11 @@ namespace RokeBackend.Controllers
             {
                 planning newplan = new planning();
                 newplan.Name = value.name;
+                newplan.idMoth = value.idMoth;
                 newplan.idBrigade = item;
                 newplan.idTemplate = value.idTemplate;
+                newplan.StartDate = value.StartDate;
+                newplan.finalDate = value.finalDate;
                 newplan.createOn = DateTime.Now;
                 newplan.lastUpdate = DateTime.Now;
                 newplan.Status = Status.Active;
@@ -104,8 +107,11 @@ namespace RokeBackend.Controllers
                 planning newplan = new planning();
                 newplan = await _PlanningService.getPlanningById(id);
                 newplan.Name = value.name;
+                newplan.idMoth = value.name;
                 newplan.idBrigade = item;
                 newplan.idTemplate = value.idTemplate;
+                newplan.StartDate = value.StartDate;
+                newplan.finalDate = value.finalDate;
                 newplan.lastUpdate = DateTime.Now;
                 newplan.Status = Status.Active;
 

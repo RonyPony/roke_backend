@@ -11,7 +11,7 @@ namespace RokeBackend.Model
         public String Name { get; set; }
         public String idMoth { get; set; }
         public String idTemplate { get; set; }
-       
+        public Guid idLocation { get; set; }
         public Guid idBrigade { get; set; }   
         public Status Status { get; set; }
         public DateTime StartDate { get; set; }

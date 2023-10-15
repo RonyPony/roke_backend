@@ -1,4 +1,5 @@
 ﻿using Roke.Core.Enums;
+using RokeBackend.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -15,10 +16,9 @@ namespace Roke.Data.DTOs
         public String idMoth { get; set; }
         public String idTemplate { get; set; }
 
-        public Guid[] idBrigade { get; set; }
+        public LocationInfo[] locationInfo { get; set; }
 
-        public DateTime StartDate { get; set; }
-        public DateTime finalDate { get; set; }
+
 
     }
 }

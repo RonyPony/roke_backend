@@ -67,16 +67,16 @@ namespace RokeBackend.Controllers
         [HttpPost("Create")]
         public async Task<PlanningDTO> asign([FromBody] PlanningDTO value)
         {
-            
-            foreach (var item in value.idBrigade)
+
+            foreach (var item in value.locationInfo)
             {
                 planning newplan = new planning();
                 newplan.Name = value.name;
                 newplan.idMoth = value.idMoth;
-                newplan.idBrigade = item;
+                newplan.idLocation = item.idLocation;
+              
                 newplan.idTemplate = value.idTemplate;
-                newplan.StartDate = value.StartDate;
-                newplan.finalDate = value.finalDate;
+            
                 newplan.createOn = DateTime.Now;
                 newplan.lastUpdate = DateTime.Now;
                 newplan.Status = Status.Active;
@@ -101,17 +101,16 @@ namespace RokeBackend.Controllers
 [HttpPut("{id}")]
         public async Task PutAsync(Guid id, [FromBody] PlanningDTO value )
         {
-
+            /*
             foreach (var item in value.idBrigade)
             {
                 planning newplan = new planning();
                 newplan = await _PlanningService.getPlanningById(id);
                 newplan.Name = value.name;
                 newplan.idMoth = value.name;
-                newplan.idBrigade = item;
+                //newplan.idBrigade = item;
                 newplan.idTemplate = value.idTemplate;
-                newplan.StartDate = value.StartDate;
-                newplan.finalDate = value.finalDate;
+              
                 newplan.lastUpdate = DateTime.Now;
                 newplan.Status = Status.Active;
 
@@ -142,7 +141,7 @@ namespace RokeBackend.Controllers
 
         
             */
-
+            
 
 
 

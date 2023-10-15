@@ -11,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Roke.Data.DTOs;
+using System.Data.Entity;
 
 namespace RokeBackend.data.Repository
 {
@@ -93,6 +94,7 @@ namespace RokeBackend.data.Repository
                 Template plan = await _context.template.FindAsync(id);
                 templateWithLocationDetails twl = new templateWithLocationDetails(); 
                 List<location> loc = new List<location>();
+                twl.Id = plan.Id;
                 twl.Name = plan.Name;
                 twl.createOn = plan.createOn;
                 twl.lastUpdate = plan.lastUpdate;
@@ -101,7 +103,7 @@ namespace RokeBackend.data.Repository
                 List<TemplateLocationMapping> x =  _context.templateLocationMapping.Where((e)=>e.TemplateId == id).ToList();
                 foreach (var item in x)
                 {
-                    var tmpLocation = _context.location.Where((e) => e.Id == item.LocationId && e.status == Roke.Core.Enums.LocationStatus.Active).FirstOrDefault();
+                    var tmpLocation =  _context.location.Where((e) => e.Id == item.LocationId && e.status == Roke.Core.Enums.LocationStatus.Active).First();
                     loc.Add(tmpLocation);
                 }
 

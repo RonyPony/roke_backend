@@ -24,6 +24,7 @@ namespace RokeBackend.core.Contracts
 
 
         public IEnumerable<user> getAllUsuarios();
+        public IEnumerable<user> getAllTech();
         public Task<user> getUsuarioByIdAsync(Guid id);
 
         /// <summary>

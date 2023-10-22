@@ -42,7 +42,21 @@ namespace RokeBackend.Controllers
             List<UserDTO>  dtoList = new List<UserDTO>();
             foreach (user value in valueList2)
             {
-                dtoList.Add(new UserDTO {id = value.Id, nombre = value.nombre, apellido = value.apellido, cedula = value.cedula, contacto = value.contacto ,rol=value.rol,status=value.Statusuario.ToString(),username=value.username});
+                dtoList.Add(new UserDTO {id = value.Id, nombre = value.nombre, apellido = value.apellido, cedula = value.cedula, contacto = value.contacto ,rol=Roles.Technician.ToString(),status=value.Statusuario.ToString(),username=value.username});
+            }
+            return dtoList;
+        }
+
+
+        [HttpGet("tech")]
+        public IEnumerable<UserDTO> GetTech()
+        {
+            IEnumerable<user> values2 = _UsuarioService.getAllTech();
+            List<user> valueList2 = values2.ToList();
+            List<UserDTO> dtoList = new List<UserDTO>();
+            foreach (user value in valueList2)
+            {
+                dtoList.Add(new UserDTO { id = value.Id, nombre = value.nombre, apellido = value.apellido, cedula = value.cedula, contacto = value.contacto, rol = Roles.Technician.ToString(), status = value.Statusuario.ToString(), username = value.username });
             }
             return dtoList;
         }
@@ -52,7 +66,7 @@ namespace RokeBackend.Controllers
         public async Task<UserDTO> GetAsync(Guid id )
         {
             user value = await _UsuarioService.GetUsuarioById(id);
-            UserDTO user =new UserDTO {id = value.Id,nombre = value.nombre, apellido = value.apellido, cedula = value.cedula, contacto = value.contacto, rol = value.rol, status = value.Statusuario.ToString(), username = value.username };            
+            UserDTO user =new UserDTO {id = value.Id,nombre = value.nombre, apellido = value.apellido, cedula = value.cedula, contacto = value.contacto, rol = Roles.Technician.ToString(), status = value.Statusuario.ToString(), username = value.username };            
             return user;
         }
 
@@ -67,7 +81,7 @@ namespace RokeBackend.Controllers
             newUser.contacto = value.contacto;
             newUser.username = value.username;
             newUser.password = value.password;
-            newUser.rol = value.rol;
+            newUser.rol = Roles.Technician;
             newUser.Statusuario= UsuarioStatus.Active;
           
 
@@ -85,8 +99,8 @@ namespace RokeBackend.Controllers
             user.cedula = value.cedula;
             user.contacto = value.contacto;
             user.username = value.username; 
-           user.password = value.password;  
-            user.rol = value.rol;
+           user.password = value.password;
+            user.rol = Roles.Technician;
             
                 
             _UsuarioService.UpdateUsuario(user);

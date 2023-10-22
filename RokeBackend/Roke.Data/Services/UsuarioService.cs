@@ -31,7 +31,11 @@ namespace RokeBackend.data.Services
         {
             throw new NotImplementedException();
         }
-
+        public IEnumerable<user> getAllTech()
+        {
+            return _repo.getAllTech();
+        }
+        
         public IEnumerable<user> GetAllUsuarios()
         {
             return _repo.getAllUsuarios();

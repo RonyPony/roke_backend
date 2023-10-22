@@ -68,6 +68,20 @@ namespace RokeBackend.data.Repository
             }
         }
 
+        public IEnumerable<user> getAllTech()
+        {
+            try
+            {
+                var user = _context.users.Where((e)=> e.rol == Roke.Core.Enums.Roles.Technician).ToList();
+                return user;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
         public async Task<user> getUsuarioByIdAsync(Guid id)
         {
             try

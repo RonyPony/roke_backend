@@ -72,7 +72,7 @@ namespace RokeBackend.Controllers
             {
                 planning newplan = new planning();
                 newplan.Name = value.name;
-                newplan.idMoth = value.idMoth;
+                newplan.idMonth = value.idMonth;
                 newplan.idLocation = item.idLocation;
               
                 newplan.idTemplate = value.idTemplate;

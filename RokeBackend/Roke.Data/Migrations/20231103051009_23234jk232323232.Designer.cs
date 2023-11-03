@@ -12,8 +12,8 @@ using RokeBackend.data.DataContext;
 namespace Roke.Data.Migrations
 {
     [DbContext(typeof(RokeContext))]
-    [Migration("20230914061818_242342ffff232ww")]
-    partial class _242342ffff232ww
+    [Migration("20231103051009_23234jk232323232")]
+    partial class _23234jk232323232
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -65,6 +65,109 @@ namespace Roke.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("tickets");
+                });
+
+            modelBuilder.Entity("RokeBackend.Model.brigade", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("createOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("lastUpdate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("status")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("brigades");
+                });
+
+            modelBuilder.Entity("RokeBackend.Model.brigadeAssigne", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("brigadeId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("tecnicosId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("brigadeAssinge");
+                });
+
+            modelBuilder.Entity("RokeBackend.Model.Inventory", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("InstallDate")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ItemCode")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Location_Conden")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Location_Evap")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Model_Conden")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Model_evap")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Serial")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
+
+                    b.Property<string>("area_supply")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("floor_Conden")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("floor_Evap")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("item_type")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("sucursal")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Inventories");
                 });
 
             modelBuilder.Entity("RokeBackend.Model.location", b =>
@@ -122,6 +225,50 @@ namespace Roke.Data.Migrations
                     b.ToTable("months");
                 });
 
+            modelBuilder.Entity("RokeBackend.Model.planning", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("StartDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("createOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("finalDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid>("idBrigade")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("idLocation")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("idMonth")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("idTemplate")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("lastUpdate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("planning");
+                });
+
             modelBuilder.Entity("RokeBackend.Model.Template", b =>
                 {
                     b.Property<Guid>("Id")
@@ -155,8 +302,11 @@ namespace Roke.Data.Migrations
                     b.Property<Guid>("LocationId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("PlanningId")
+                    b.Property<Guid>("TemplateId")
                         .HasColumnType("uniqueidentifier");
+
+                    b.Property<int>("status")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -195,9 +345,8 @@ namespace Roke.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("rol")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("rol")
+                        .HasColumnType("int");
 
                     b.Property<string>("username")
                         .IsRequired()

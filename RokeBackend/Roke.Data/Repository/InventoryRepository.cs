@@ -21,14 +21,14 @@ namespace RokeBackend.data.Repository
         {
             _context = ctx;
         }
-        public async Task<user> CreateUsuario(user Usuario)
+        public async Task<Inventory> CreateInventory(Inventory inventory)
         {
-            user finaluser = new user();
+            Inventory finaluser = new Inventory();
             try
             {
-                _context.users.Add(Usuario);
+                _context.Inventories.Add(inventory);
                 await _context.SaveChangesAsync();
-                finaluser = Usuario;
+                finaluser = inventory;
                 return finaluser;
             }
             catch (Exception ex)
@@ -40,12 +40,12 @@ namespace RokeBackend.data.Repository
 
       
 
-        public IEnumerable<user> getAllUsuario()
+        public IEnumerable<Inventory> getAllInventorys()
         {
             try
             {
-                var user = _context.users.ToList();
-                return user;
+                var inventories = _context.Inventories.ToList();
+                return inventories;
             }
             catch (Exception)
             {
@@ -54,26 +54,14 @@ namespace RokeBackend.data.Repository
             }
         }
 
-        public IEnumerable<user> getAllUsuarios()
+    
+
+        public async Task<Inventory> getInventoryByIdAsync(Guid id)
         {
             try
             {
-                var user = _context.users.ToList();
-                return user;
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
-        }
-
-        public async Task<user> getUsuarioByIdAsync(Guid id)
-        {
-            try
-            {
-                user usuario = await _context.users.FindAsync(id);
-                return usuario;
+                Inventory inventory = await _context.Inventories.FindAsync(id);
+                return inventory;
             }
             catch (Exception)
             {
@@ -83,15 +71,15 @@ namespace RokeBackend.data.Repository
         }
 
 
-        public async Task<int> RemoveUsuario(Guid idUsuario)
+        public async Task<int> RemoveInventory(Guid id)
         {
             try
             {
                 try
                 {
-                    user usuario = await _context.users.FindAsync(idUsuario);
+                    Inventory inventory = await _context.Inventories.FindAsync(id);
                     //_context.tickets.Remove(Ticket);
-                    usuario.Statusuario = Roke.Core.Enums.UsuarioStatus.Deleted;
+                    inventory.Status = Roke.Core.Enums.Status.Deleted;
                     _context.SaveChanges();
                     return 1;
                 }
@@ -108,73 +96,32 @@ namespace RokeBackend.data.Repository
             }
         }
 
-        public Task<int> RemoveUsuarios(Guid idUsuario)
-        {
-            throw new NotImplementedException();
-        }
+     
 
-        public Task<user> UpdateTicket(user user)
-        {
-            throw new NotImplementedException();
-        }
+  
 
-        public async Task UpdateUsuarios(Guid id)
-        {
-
-            _context.Entry(id).State = EntityState.Modified;
-            await _context.SaveChangesAsync();
-                
-           
-        }
-
-        public Task<user> UpdateUsuariso(user Usuario)
-        {
-            throw new NotImplementedException();
-        }
+       
 
       
 
-     public async Task<user> UpdateUsuario(user user)
+     public async Task<Inventory> UpdateInventory(Inventory inventory)
         {
             try
             {
                 
-                 _context.users.Update(user);
+                 _context.Inventories.Update(inventory);
                 await _context.SaveChangesAsync();
-                return user;
+                return inventory;
             }
             catch (Exception ex)
             {
                 _context.ChangeTracker.Clear();
-                return user;
+                return inventory;
             }
 
 
         }
 
-        public Task<Inventory> CreateInventory(Inventory Inventory)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<Inventory> getAllInventorys()
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<Inventory> getInventoryByIdAsync(Guid id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<Inventory> UpdateInventory(Inventory Inventory)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<int> RemoveInventory(Guid id)
-        {
-            throw new NotImplementedException();
-        }
+    
     }
 }

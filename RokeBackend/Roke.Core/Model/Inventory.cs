@@ -13,10 +13,10 @@ namespace RokeBackend.Model
         public string ItemCode { get; set; }
         public string InstallDate { get; set; }
         public string Location_Conden { get; set; }
-        public bool Status { get; set; }
+        public Status Status { get; set; }
         public string Serial { get; set; }
         public string Location_Evap { get; set; }
-        public string Área_supply { get; set; }
+        public string area_supply { get; set; }
         public string floor_Evap { get; set; }
         public string floor_Conden { get; set; }
         public string Model_Conden { get; set; }

@@ -74,7 +74,9 @@ namespace RokeBackend.Controllers
                 newplan.Name = value.name;
                 newplan.idMonth = value.idMonth;
                 newplan.idLocation = item.idLocation;
-              
+                newplan.idBrigade = item.idBrigade;
+                newplan.StartDate = item.StartDate;
+                newplan.finalDate = item.finalDate;
                 newplan.idTemplate = value.idTemplate;
             
                 newplan.createOn = DateTime.Now;

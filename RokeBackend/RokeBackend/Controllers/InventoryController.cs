@@ -39,7 +39,7 @@ namespace RokeBackend.Controllers
         }
 
         // GET api/<TicketController>/5
-        [HttpGet("month")]
+        [HttpGet("Inventory")]
         public async Task<Inventory> GetAsync(Guid id)
         {
             return await _InventoryService.GetInventoryById(id);

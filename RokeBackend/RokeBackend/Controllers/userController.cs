@@ -65,7 +65,7 @@ namespace RokeBackend.Controllers
                 new Claim(JwtRegisteredClaimNames.Sub, jwt.Subject),
                  new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
                   new Claim(JwtRegisteredClaimNames.Iat, DateTime.UtcNow.ToString()),
-                  new Claim("id", user.IdUser.ToString()),
+                  new Claim("id", user.Id.ToString()),
                   new Claim("user", user.username)
 
             };

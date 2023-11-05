@@ -45,6 +45,12 @@ namespace RokeBackend.Controllers
             return await _InventoryService.GetInventoryById(id);
         }
 
+        [HttpGet("IdSucursal")]
+        public  IEnumerable<Inventory> Getsucursal(Guid id)
+        {
+            return  _InventoryService.getInventoryByLocationAsync(id);
+        }
+
         [HttpPost]
         public async Task<Inventory> PostAsync([FromBody] InventoryDTO value)
         {

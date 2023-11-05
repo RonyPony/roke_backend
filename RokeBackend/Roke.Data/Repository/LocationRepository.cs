@@ -25,6 +25,21 @@ namespace RokeBackend.data.Repository
             throw new NotImplementedException();
         }
 
+        public async Task<locationMapping> assignInvetory(locationMapping Location)
+        {
+            try
+            {
+                _context.locationMapping.Add(Location);
+                await _context.SaveChangesAsync();
+                return Location;
+            }
+            catch (Exception ex)
+            {
+                _context.ChangeTracker.Clear();
+                return Location;
+            }
+        }
+
         public async Task<location> CreateLocation(location Location)
         {
             location finaluser = new location();
@@ -71,6 +86,9 @@ namespace RokeBackend.data.Repository
                 throw;
             }
         }
+
+
+
 
         public async Task<location> getLocationByIdAsync(Guid id)
         {

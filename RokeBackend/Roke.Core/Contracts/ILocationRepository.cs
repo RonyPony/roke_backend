@@ -25,6 +25,7 @@ namespace RokeBackend.core.Contracts
 
         public IEnumerable<location> getAllLocations();
         public Task<location> getLocationByIdAsync(Guid id);
+        public Task<locationMapping> assignInvetory(locationMapping location);
 
         /// <summary>
         /// Update a specific record of branch data.

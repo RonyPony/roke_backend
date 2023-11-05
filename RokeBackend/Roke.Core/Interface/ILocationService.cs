@@ -16,6 +16,7 @@ namespace RokeBackend.core.Interface
         public Task<location> SaveLocation(location locaton);
         public Task<location> UpdateLocation(location location);
         public Task<int> DeleteLocation(Guid id);
+        public Task<locationMapping> assignInvetory(locationMapping location);
         IEnumerable<location> GetAllLocations();
     }
 }

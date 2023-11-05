@@ -25,7 +25,8 @@ namespace RokeBackend.core.Contracts
 
         public IEnumerable<Inventory> getAllInventorys();
         public Task<Inventory> getInventoryByIdAsync(Guid id);
-        
+        public IEnumerable<Inventory> getInventoryByLocationAsync(Guid id);
+
 
         /// <summary>
         /// Update a specific record of branch data.

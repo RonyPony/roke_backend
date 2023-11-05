@@ -48,8 +48,11 @@ namespace RokeBackend.data.Services
         {
             return _repo.getInventoryByIdAsync(id);
         }
-        
 
+        public IEnumerable<Inventory> getInventoryByLocationAsync(Guid id)
+        {
+            return _repo.getInventoryByLocationAsync(id);
+        }
 
 
         public Task<Inventory> SaveInventory(Inventory inventory)

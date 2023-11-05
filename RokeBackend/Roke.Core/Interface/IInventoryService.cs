@@ -16,6 +16,7 @@ namespace RokeBackend.core.Interface
       
         public Task<Inventory> SaveInventory(Inventory Inventory);
         public Task<Inventory> UpdateInventory(Inventory Inventory);
+        public IEnumerable<Inventory> getInventoryByLocationAsync(Guid id);
         public Task<int> DeleteInventory(Guid Id);
         
     }

@@ -54,9 +54,9 @@ namespace RokeBackend.data.Services
             return await _repo.UpdateLocation(location);
         }
 
-        public Task<location> UpdateLocatio(location location)
+        public async Task<locationMapping> assignInvetory(locationMapping location)
         {
-            throw new NotImplementedException();
+            return await _repo.assignInvetory(location);
         }
 
         public Task<location> SaveLocatio(location locaton)

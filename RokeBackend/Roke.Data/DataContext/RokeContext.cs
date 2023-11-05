@@ -19,6 +19,7 @@ namespace RokeBackend.data.DataContext
         public DbSet<user> users { get; set; }
         public DbSet<Ticket>tickets{get;set;}
         public DbSet<location> location { get; set; }
+        public DbSet<locationMapping> locationMapping { get; set; }
         public DbSet<month> months { get; set; }
         public DbSet<Template> template { get; set; }
         public DbSet<Inventory> Inventories { get; set; }

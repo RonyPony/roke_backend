@@ -54,7 +54,21 @@ namespace RokeBackend.data.Repository
             }
         }
 
-    
+
+        public  IEnumerable<Inventory> getInventoryByLocationAsync(Guid id)
+        {
+            try
+            {
+                List<Inventory> inventory =   _context.Inventories.Where((e)=> e.sucursal == id).ToList();
+
+                return inventory;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
 
         public async Task<Inventory> getInventoryByIdAsync(Guid id)
         {

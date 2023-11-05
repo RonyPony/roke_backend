@@ -45,6 +45,31 @@ namespace RokeBackend.Controllers
             return await _LocationService.GetLocationById(id);
         }
 
+        [HttpPost("asign")]
+        public async Task<LocationMappingDTO> asign([FromBody] LocationMappingDTO value)
+        {
+       
+            foreach (var item in value.idInventary)
+            {
+                locationMapping newplan = new locationMapping();
+                newplan.idInventory = item;
+                newplan.idlocation = value.idLocation;
+
+                try
+                {
+                    await _LocationService.assignInvetory(newplan);
+                }
+                catch (Exception ex)
+                {
+
+                    throw;
+                }
+            }
+
+            return value;
+        }
+
+
         // POST api/<TicketController>
         [HttpPost]
         public async Task<location> PostAsync([FromBody] LocationDTO value)

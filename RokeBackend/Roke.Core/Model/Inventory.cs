@@ -9,7 +9,7 @@ namespace RokeBackend.Model
         public Guid Id { get; set; }
        
       
-        public string sucursal { get; set; }
+        public Guid sucursal { get; set; }
         public string ItemCode { get; set; }
         public string InstallDate { get; set; }
         public string Location_Conden { get; set; }

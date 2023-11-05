@@ -7,9 +7,9 @@ namespace RokeBackend.Model
     {
         [Key]
         public Guid Id { get; set; }
-       
+        public Guid IdPlan { get; set; }
         public String Name { get; set; }
-        public String idTemplate { get; set; }
+        public Guid idTemplate { get; set; }
 
         public List<brigade> Brigade { get; set; }
         public Status Status { get; set; }

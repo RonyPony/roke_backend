@@ -11,7 +11,7 @@ namespace RokeBackend.core.Interface
 {
     public interface IPlanningService
     {
-        public IEnumerable<planning> GetAllPlannings();
+        public Task<planningDetails> GetAllPlannings();
         public Task<planningDetails> GetPlanningById(Guid id);
   
 

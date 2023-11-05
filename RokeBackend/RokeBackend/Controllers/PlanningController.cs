@@ -35,7 +35,7 @@ namespace RokeBackend.Controllers
 
         // GET: api/<TicketController>
         [HttpGet]
-        public IEnumerable<planning> Get()
+        public Task<planningDetails> Get()
         {
           
             return _PlanningService.GetAllPlannings();
@@ -72,6 +72,7 @@ namespace RokeBackend.Controllers
             {
                 planning newplan = new planning();
                 newplan.Name = value.name;
+                newplan.IdPlan = value.IdPlan = Guid.NewGuid();
                 newplan.idMonth = value.idMonth;
                 newplan.idLocation = item.idLocation;
                 newplan.idBrigade = item.idBrigade;

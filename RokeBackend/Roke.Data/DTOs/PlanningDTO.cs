@@ -13,8 +13,9 @@ namespace Roke.Data.DTOs
     {
         public String name { get; set; }
 
+        public Guid IdPlan { get; set; }
         public String idMonth { get; set; }
-        public String idTemplate { get; set; }
+        public Guid idTemplate { get; set; }
 
         public LocationInfo[] locationInfo { get; set; }
 

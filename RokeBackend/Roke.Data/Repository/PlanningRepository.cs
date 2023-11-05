@@ -94,9 +94,21 @@ namespace RokeBackend.data.Repository
                 }
             }
         */
+        public  IEnumerable<planning> getAllPlanningforCalendar()
+        {
+             try
+             {
+                 var planning = _context.planning.ToList();
+                 return planning;
+             }
+             catch (Exception)
+             {
 
+                 throw;
+             }
+        }
 
-        public async Task<planningDetails> getAllPlannings()
+            public async Task<planningDetails> getAllPlannings()
         {
             /* try
              {

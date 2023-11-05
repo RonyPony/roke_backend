@@ -43,9 +43,14 @@ namespace RokeBackend.data.Services
             return _repo.getAllPlannings();
         }
 
-       
 
-     
+        
+        public IEnumerable<planning> getAllPlanningforCalendar()
+        {
+            return _repo.getAllPlanningforCalendar();
+        }
+
+    
 
 
         public Task<planningDetails> GetPlanningById(Guid id)

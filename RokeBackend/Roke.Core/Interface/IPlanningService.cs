@@ -13,7 +13,7 @@ namespace RokeBackend.core.Interface
     {
         public Task<planningDetails> GetAllPlannings();
         public Task<planningDetails> GetPlanningById(Guid id);
-  
+        public IEnumerable<planning> getAllPlanningforCalendar();
 
         public Task<planning> SavePlanning(planning planning);
 

@@ -36,7 +36,7 @@ namespace RokeBackend.data.Services
 
         }
 
-      
+       
 
         public IEnumerable<Template> GetAllTemplates()
         {

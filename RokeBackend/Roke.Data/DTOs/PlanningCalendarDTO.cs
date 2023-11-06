@@ -9,12 +9,12 @@ using System.Threading.Tasks;
 
 namespace Roke.Data.DTOs
 {
-    public class PlanningDTO
+    public class PlanningsDTO
     {
         public String name { get; set; }
 
         public Guid IdPlan { get; set; }
-        public Guid idMonth { get; set; }
+        public String idMonth { get; set; }
         public Guid idTemplate { get; set; }
 
         public LocationInfo[] locationInfo { get; set; }

@@ -45,7 +45,7 @@ namespace RokeBackend.data.Services
 
 
         
-        public IEnumerable<planning> getAllPlanningforCalendar()
+        public Task<IEnumerable<planningCalendar>> getAllPlanningforCalendar()
         {
             return _repo.getAllPlanningforCalendar();
         }

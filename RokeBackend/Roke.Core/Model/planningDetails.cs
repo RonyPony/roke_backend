@@ -13,7 +13,8 @@ namespace RokeBackend.Model
 
         public List<brigade> Brigade { get; set; }
         public Status Status { get; set; }
-
+        public DateTime StartDate { get; set; }
+        public DateTime finalDate { get; set; }
         public DateTime createOn { get; set; }
         public DateTime lastUpdate { get; set; }
 

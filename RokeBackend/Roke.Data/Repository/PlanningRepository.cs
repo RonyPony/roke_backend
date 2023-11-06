@@ -11,6 +11,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Roke.Data.DTOs;
+using System.Numerics;
+using System.Collections;
 
 namespace RokeBackend.data.Repository
 {
@@ -94,12 +96,27 @@ namespace RokeBackend.data.Repository
                 }
             }
         */
-        public  IEnumerable<planning> getAllPlanningforCalendar()
+        public async Task<IEnumerable<planningCalendar>> getAllPlanningforCalendar()
         {
              try
              {
-                 var planning = _context.planning.ToList();
-                 return planning;
+                List<planning> planning = _context.planning.ToList();
+                
+                List<planningCalendar> obj = new List<planningCalendar>();
+                
+                foreach (var item in planning)
+                {
+                    planningCalendar ob = new planningCalendar();
+                    brigade tmpPlan = await _context.brigades.FindAsync(item.idBrigade);
+                    ob.id = item.idTemplate;
+                    ob.title = tmpPlan.Name;
+                    ob.start = item.StartDate;
+                    ob.end = item.finalDate;
+                    obj.Add(ob);
+                }
+              
+                return obj;
+
              }
              catch (Exception)
              {
@@ -145,7 +162,7 @@ namespace RokeBackend.data.Repository
             }
         }
 
-        public async Task<planning>  getPlanningById(Guid id)
+        public async Task<planning> getPlanningById(Guid id)
         {
             try
             {
@@ -159,6 +176,20 @@ namespace RokeBackend.data.Repository
             }
         }
 
+       /* public async List<Task<planning>> getPlanningByIdMonthAsync(Guid id)
+        {
+            try
+            {
+                List<planning> planning = await _context.planning.Where((e) => e.idMonth == id).Distinct();
+                return  planning;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+      */
         public async Task<planningDetails> getPlanningByIdAsync(Guid id)
         {
             try
@@ -168,6 +199,8 @@ namespace RokeBackend.data.Repository
                 List<brigade> user = new List<brigade>();
                 twl.Name = plan.Name;
                 twl.idTemplate = plan.idTemplate;
+                twl.finalDate = plan.finalDate;
+                twl.StartDate = plan.StartDate;
                           
                 List<planning> x =  _context.planning.Where((e)=>e.idBrigade == plan.idBrigade && e.idTemplate == plan.idTemplate).ToList();
                 foreach (var item in x)

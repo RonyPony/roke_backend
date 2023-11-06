@@ -42,7 +42,7 @@ namespace RokeBackend.Controllers
 
         }
         [HttpGet("calendar")]
-        public IEnumerable<planning> GetCalendar()
+        public Task<IEnumerable<planningCalendar>> GetCalendar()
         {
 
             return _PlanningService.getAllPlanningforCalendar();

@@ -22,7 +22,7 @@ namespace RokeBackend.core.Contracts
         /// </summary>
         /// <param name="branch">Branch's request</param>
 
-        public Task<planningDetails> getAllPlannings();
+        public Task<List<List<planning>>> getAllPlannings();
         public IEnumerable<planning> getAllPlanningforCalendar();
         public Task<planningDetails> getPlanningByIdAsync(Guid id);
         public Task<planning> getPlanningById(Guid id);

@@ -35,7 +35,7 @@ namespace RokeBackend.Controllers
 
         // GET: api/<TicketController>
         [HttpGet]
-        public Task<planningDetails> Get()
+        public Task<List<List<planning>>> Get()
         {
           
             return _PlanningService.GetAllPlannings();
@@ -75,25 +75,26 @@ namespace RokeBackend.Controllers
         [HttpPost("Create")]
         public async Task<PlanningDTO> asign([FromBody] PlanningDTO value)
         {
+            Guid currentPlanId = Guid.NewGuid();
 
             foreach (var item in value.locationInfo)
             {
                 planning newplan = new planning();
                 newplan.Name = value.name;
-                newplan.IdPlan = Guid.NewGuid();
+                
                 newplan.idMonth = value.idMonth;
                 newplan.idLocation = item.idLocation;
                 newplan.idBrigade = item.idBrigade;
                 newplan.StartDate = item.StartDate;
                 newplan.finalDate = item.finalDate;
                 newplan.idTemplate = value.idTemplate;
-            
+                newplan.IdPlan = currentPlanId;
                 newplan.createOn = DateTime.Now;
                 newplan.lastUpdate = DateTime.Now;
                 newplan.Status = Status.Active;
 
                 try
-                {
+                {  
                    await _PlanningService.SavePlanning(newplan);
                 }
                 catch (Exception ex)

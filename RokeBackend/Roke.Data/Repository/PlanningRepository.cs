@@ -108,7 +108,7 @@ namespace RokeBackend.data.Repository
              }
         }
 
-            public async Task<planningDetails> getAllPlannings()
+            public async Task<List<List<planning>>> getAllPlannings()
         {
             /* try
              {
@@ -122,23 +122,21 @@ namespace RokeBackend.data.Repository
              }*/
             try
             {
-                List<planning> plan =  _context.planning.ToList();
-                planningDetails twl = new planningDetails();
-                List<brigade> brigada = new List<brigade>();
-               
+                List<List<planning>> plan = new List<List<planning>>();
+                
+                List<Guid> result = _context.planning.Select(m => m.IdPlan).Distinct().ToList();
 
-             
-                foreach (var item in plan)
+                var tmpPlan2 = _context.planning.Where(e => e.IdPlan == Guid.NewGuid()).ToList();
+
+                foreach (var item in result)
                 {
-                   
-                    var tmpBrigade = await _context.brigades.FindAsync(item.idBrigade);
-                    brigada.Add(tmpBrigade);
-                    
-                }
 
-                twl.Brigade = brigada;
+                    List<planning> tmpPlan = _context.planning.Where(e=>e.IdPlan==item).ToList();
+                    plan.Add(tmpPlan);
+
+                }
             
-                return twl;
+                return plan;
             }
             catch (Exception)
             {
@@ -241,9 +239,6 @@ namespace RokeBackend.data.Repository
 
 
         }
-
-       
-
-      
+        
     }
 }

@@ -16,8 +16,8 @@ namespace Roke.Data.DTOs
 
         public Guid locationId { get; set; }
         public Guid assignedUserId { get; set; }
-        public Guid photoId1 { get; set; }
-        public Guid photoId2 { get; set; }
-        public Guid photoId3 { get; set; }
+        public string contactName { get; set; }
+        public string contactNumber { get; set; }
+        public bool contactHasWhatsapp { get; set; }
     }
 }

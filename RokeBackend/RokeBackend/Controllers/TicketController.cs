@@ -9,6 +9,7 @@ using RokeBackend.core.Interface;
 using RokeBackend.data.DTOs;
 using RokeBackend.data.Services;
 using RokeBackend.Model;
+using System.Data.Entity.Core;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
@@ -47,6 +48,12 @@ namespace RokeBackend.Controllers
         {
             return await _TicketService.GetTicketById(id);
         }
+        [HttpGet("details")]
+        public async Task<Ticket> GetAllsync(Guid id )
+        {
+
+            return await _TicketService.GetTicketById(id);
+        }
 
         // GET api/<TicketController>/5
         [HttpGet("/assignedByUserId{userId}")]
@@ -74,6 +81,8 @@ namespace RokeBackend.Controllers
             newTicket.updatedOn = DateTime.Now;
             newTicket.ticketType= value.ticketType;
             newTicket.status = TicketStatus.Pending;
+            newTicket.assignedUserId = value.assignedUserId;
+            newTicket.idmedia = value.idmedia;
 
             return await _TicketService.SaveTicket(newTicket);
         }

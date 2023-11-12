@@ -14,10 +14,10 @@ using Roke.Data.DTOs;
 
 namespace RokeBackend.data.Repository
 {
-    public class BrigadeRepository : IBrigadeRepository
+    public class MediaRepository : IMediaRepository
     {
         private readonly RokeContext _context;
-        public BrigadeRepository(RokeContext ctx)
+        public MediaRepository(RokeContext ctx)
         {
             _context = ctx;
 
@@ -25,11 +25,11 @@ namespace RokeBackend.data.Repository
 
 
 
-        public async Task<brigadeAssigne> asignBrigades(brigadeAssigne data)
+        public async Task<Media> CreateMedia(Media data)
         {
             try
             {
-                _context.brigadeAssinge.Add(data);
+                _context.media.Add(data);
                 await _context.SaveChangesAsync();
                 return data;
             }
@@ -40,45 +40,15 @@ namespace RokeBackend.data.Repository
             }
         }
     
-        public async Task<brigadeAssigne> asignBrigadesByTemplate(brigadeAssigne data)
-        {
-           try
-            {
-                _context.brigadeAssinge.Add(data);
-                await _context.SaveChangesAsync();
-                return data;
-            }
-            catch (Exception ex)
-            {
-                _context.ChangeTracker.Clear();
-                return data;
-            }
-        }
-
-        public async Task<brigade> CreateBrigade(brigade brigade)
-        {
-            brigade plan = new brigade();
-            try
-            {
-                _context.brigades.Add(brigade);
-                await _context.SaveChangesAsync();
-                plan = brigade;
-                return plan;
-            }
-            catch (Exception ex)
-            {
-                _context.ChangeTracker.Clear();
-                return plan;
-            }
-        }
 
 
-        public IEnumerable<brigade> getAllBrigades()
+
+        public IEnumerable<Media> getAllMedias()
         {
             try
             {
-                var brigade = _context.brigades.ToList();
-                return brigade;
+                var media = _context.media.ToList();
+                return media;
             }
             catch (Exception)
             {
@@ -89,12 +59,12 @@ namespace RokeBackend.data.Repository
 
 
         
-        public async Task<brigade> GetBrigadeById(Guid id)
+        public async Task<Media> getMediaByIdAsync(Guid id)
         {
             try
             {
-                brigade brigade = await _context.brigades.FindAsync(id);
-                return brigade;
+                Media media = await _context.media.FindAsync(id);
+                return media;
             }
             catch (Exception)
             {
@@ -102,27 +72,21 @@ namespace RokeBackend.data.Repository
                 throw;
             }
         }
-
+        /*
         public async Task<brigadeDetails> getBrigadeByIdByTechAsync(Guid id)
         {
             try
             {
                 brigade plan = await _context.brigades.FindAsync(id);
                 brigadeDetails twl = new brigadeDetails();
-                List<userDetails> user = new List<userDetails>();
+                List<user> user = new List<user>();
                 twl.Name = plan.Name;
               
                 List<brigadeAssigne> x =  _context.brigadeAssinge.Where((e)=>e.brigadeId == id).ToList();
                 foreach (var item in x)
                 {
                     var tmpUser = await _context.users.FindAsync(item.tecnicosId);
-                    userDetails obj = new userDetails();
-                    obj.nombre = tmpUser.nombre;
-                    obj.apellido = tmpUser.apellido;
-                    obj.cedula = tmpUser.cedula;
-                    obj.contacto = tmpUser.contacto;
-                    obj.rol = tmpUser.rol;
-                    user.Add(obj);
+                    user.Add(tmpUser);
                 }
 
                 twl.tecnicos = user;
@@ -134,19 +98,19 @@ namespace RokeBackend.data.Repository
 
                 throw;
             }
-        }
+        }*/
 
    
 
-        public async Task<int> RemoveBrigade(Guid id)
+        public async Task<int> RemoveMedia(Guid id)
         {
             try
             {
                 try
                 {
-                    brigade plan = await _context.brigades.FindAsync(id);
+                    Media plan = await _context.media.FindAsync(id);
                     //_context.tickets.Remove(Ticket);
-                    plan.status = Roke.Core.Enums.Status.Deleted;
+                    plan.isDeleted = true;
                     _context.SaveChanges();
                     return 1;
                 }
@@ -165,19 +129,19 @@ namespace RokeBackend.data.Repository
 
    
 
-        public async Task<brigade> UpdateBrigade(brigade brigade)
+        public async Task<Media> UpdateMedia(Media media)
         {
             try
             {
                 
-                 _context.brigades.Update(brigade);
+                 _context.media.Update(media);
                 await _context.SaveChangesAsync();
-                return brigade;
+                return media;
             }
             catch (Exception ex)
             {
                 _context.ChangeTracker.Clear();
-                return brigade;
+                return media;
             }
 
 

@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using RokeBackend.data.DataContext;
 
@@ -11,9 +12,10 @@ using RokeBackend.data.DataContext;
 namespace Roke.Data.Migrations
 {
     [DbContext(typeof(RokeContext))]
-    partial class RokeContextModelSnapshot : ModelSnapshot
+    [Migration("20231112000039_wewer232323223")]
+    partial class wewer232323223
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -49,10 +51,16 @@ namespace Roke.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid>("idmedia")
+                    b.Property<Guid>("locationId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("locationId")
+                    b.Property<Guid>("photoId1")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("photoId2")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("photoId3")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<int>("status")

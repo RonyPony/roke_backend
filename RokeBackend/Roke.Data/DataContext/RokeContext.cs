@@ -23,7 +23,7 @@ namespace RokeBackend.data.DataContext
         public DbSet<month> months { get; set; }
         public DbSet<Template> template { get; set; }
         public DbSet<Inventory> Inventories { get; set; }
-
+        public DbSet<Media> media { get; set; }
         public  DbSet<TemplateLocationMapping> templateLocationMapping { get; set; }
         public DbSet<brigade> brigades { get; set; }
 

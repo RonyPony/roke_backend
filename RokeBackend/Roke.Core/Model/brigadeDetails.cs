@@ -1,6 +1,7 @@
 ﻿using Roke.Core.Enums;
 using System.ComponentModel.DataAnnotations;
 
+
 namespace RokeBackend.Model
 {
     public class brigadeDetails
@@ -11,7 +12,7 @@ namespace RokeBackend.Model
        
         public String Name { get; set; }     
         
-        public List<user> tecnicos { get; set; }
+        public List<userDetails> tecnicos { get; set; }
 
         public Status status { get; set; }
 

@@ -9,12 +9,15 @@ using System.Text;
 using System.Threading.Tasks;
 using RokeBackend.core.Contracts;
 using Roke.Core.Model;
+using Roke.Data.DTOs;
 
 namespace RokeBackend.data.Services
 {
     public class TicketService : ITicketService
     {
         private readonly ITicketRepository _repo;
+        private readonly ILocationRepository _locationRepository;
+
 
         public TicketService(ITicketRepository repo)
         {
@@ -37,9 +40,10 @@ namespace RokeBackend.data.Services
             return _repo.getTicketAssignedByUserId(userId);
         }
 
-        public Task<Ticket> GetTicketById(Guid id)
+        public async Task<Ticket> GetTicketById(Guid id)
         {
-            return _repo.getTicketByIdAsync(id);
+          
+            return await _repo.getTicketByIdAsync(id);
         }
 
 

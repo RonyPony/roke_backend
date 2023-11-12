@@ -12,6 +12,7 @@ namespace Roke.Core.Model
     {
         [Key]
         public Guid Id { get; set; }
+       
         public TicketStatus status { get; set; }
         public DateTime createdOn { get; set; }
         public DateTime updatedOn { get; set; }
@@ -23,9 +24,8 @@ namespace Roke.Core.Model
 
         public Guid locationId { get; set; }
         public Guid assignedUserId { get; set; }
-        public Guid photoId1 { get; set; }
-        public Guid photoId2 { get; set; }
-        public Guid photoId3 { get; set; }
+        public Guid idmedia { get; set; }
+ 
 
     }
 }

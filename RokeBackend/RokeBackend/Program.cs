@@ -54,7 +54,8 @@ builder.Services.AddTransient<IBrigadeRepository, BrigadeRepository>();
 builder.Services.AddTransient<IBrigadeService, BrigadeService>();
 builder.Services.AddTransient<IPlanningRepository, PlanningRepository>();
 builder.Services.AddTransient<IPlanningService, PlanService>();
-
+builder.Services.AddTransient<IMediaRepository, MediaRepository>();
+builder.Services.AddTransient<IMediaService, MediaService>();
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
 {

@@ -19,6 +19,7 @@ namespace Roke.Data.DTOs
         public string contactName { get; set; }
         public string contactNumber { get; set; }
         public bool contactHasWhatsapp { get; set; }
+        public Guid brigadeId { get; set; }
         public Guid idmedia { get; set; }
     }
 }

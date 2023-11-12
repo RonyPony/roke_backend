@@ -21,7 +21,7 @@ namespace Roke.Core.Model
         public string contactName { get; set; }
         public string contactNumber { get; set; }
         public bool contactHasWhatsapp { get; set; }
-
+        public Guid brigadeId { get; set; }
         public Guid locationId { get; set; }
         public Guid assignedUserId { get; set; }
         public Guid idmedia { get; set; }

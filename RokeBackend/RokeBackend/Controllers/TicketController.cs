@@ -83,6 +83,7 @@ namespace RokeBackend.Controllers
             newTicket.status = TicketStatus.Pending;
             newTicket.assignedUserId = value.assignedUserId;
             newTicket.idmedia = value.idmedia;
+            newTicket.brigadeId = value.brigadeId;
 
             return await _TicketService.SaveTicket(newTicket);
         }

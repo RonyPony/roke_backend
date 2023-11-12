@@ -29,5 +29,6 @@ namespace RokeBackend.data.DataContext
 
         public DbSet<planning> planning { get; set; }
         public DbSet<brigadeAssigne> brigadeAssinge { get; set; }
+        public DbSet<Form> formularios { get; set; }
     }
 }

@@ -56,6 +56,10 @@ builder.Services.AddTransient<IPlanningRepository, PlanningRepository>();
 builder.Services.AddTransient<IPlanningService, PlanService>();
 builder.Services.AddTransient<IMediaRepository, MediaRepository>();
 builder.Services.AddTransient<IMediaService, MediaService>();
+builder.Services.AddTransient<IFormRepository, FormRepository>();
+builder.Services.AddTransient<IFormService, FormService>();
+
+
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
 {

@@ -1,22 +1,19 @@
 ﻿using Roke.Core.Enums;
 using System.ComponentModel.DataAnnotations;
-using System.Security.Policy;
 
 namespace RokeBackend.Model
 {
-    public class Form
+    public class FormDTO
     {
-        [Key]
-        public Guid id { get; set; }
         public Guid idplanning { get; set; }
-        public Guid idForm {  get; set; }
-        public Guid idTecnico { get; set; } 
+        public Guid idForm { get; set; }
+        public Guid idTecnico { get; set; }
         public Guid inventarioId { get; set; }
-        public DateTime  startTime { get; set; }
+        public DateTime startTime { get; set; }
         public DateTime CheckIn { get; set; }
         public DateTime checkOut { get; set; }
         public string frecuencia { get; set; }
-        public string Unidad_AC_antes_preventivo {  get; set; }
+        public string Unidad_AC_antes_preventivo { get; set; }
         public string temperatura_antes_preventivo { get; set; }
         public string aviso_precaucion { get; set; }
         public bool equipo_limpio { get; set; }
@@ -48,15 +45,16 @@ namespace RokeBackend.Model
         public bool switch_baja { get; set; }
         public string switch_alta { get; set; }
         public bool DGT { get; set; }
-        public string switch_aceite  { get; set; }
-        public string chequeo_ducteria { get; set; }
-        public string chequeo_estado_aislamiento { get; set; }
-        public string ubicacion { get; set; }
-        public string capacidad_BTU { get; set; }
-        public string tipologia { get; set; }
-        public string actividad_ejecutada { get; set; }
-        public string observaciones { get; set; }
-       
+        public string switch_aceite { get; set; }
+        public string chequeo_ducteria { get;  set; }
+        public string chequeo_estado_aislamiento { get;  set; }
+        public string ubicacion { get;  set; }
+        public string capacidad_BTU { get;  set; }
+        public string tipologia { get;  set; }
+        public string actividad_ejecutada { get;  set; }
+        public string observaciones { get;  set; }
+
+
 
 
     }

@@ -13,7 +13,7 @@ namespace RokeBackend.core.Contracts
     {
 
         public Task<TicketGestion> CreateGestion(TicketGestion data);
-        public IEnumerable<TicketGestion> getAllBrigades();
+        public IEnumerable<TicketGestion> getAllTikecktGestion();
         public Task<TicketGestion> getGestionByIdAsync(Guid id);
        // public Task<brigade> GetBrigadeById(Guid id);
         

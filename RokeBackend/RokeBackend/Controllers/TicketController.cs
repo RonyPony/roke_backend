@@ -71,7 +71,9 @@ namespace RokeBackend.Controllers
         [HttpPost]
         public async Task<Ticket> PostAsync([FromBody] TicketDTO value)
         {
+            
             Ticket newTicket = new Ticket();
+           
             newTicket.description = value.description;
             newTicket.contactName = value.contactName;
             newTicket.contactNumber = value.contactNumber;

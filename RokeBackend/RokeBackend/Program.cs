@@ -58,6 +58,10 @@ builder.Services.AddTransient<IMediaRepository, MediaRepository>();
 builder.Services.AddTransient<IMediaService, MediaService>();
 builder.Services.AddTransient<IFormRepository, FormRepository>();
 builder.Services.AddTransient<IFormService, FormService>();
+builder.Services.AddTransient<ITicektGestionRepository, TicketGestionRepository>();
+builder.Services.AddTransient<ITicketGestionService, TicketGestionService>();
+
+
 
 
 

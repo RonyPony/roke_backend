@@ -12,7 +12,7 @@ namespace RokeBackend.core.Interface
     public interface ITicketGestionService
     {
         public Task<TicketGestion> CreateGestion(TicketGestion data);
-        public IEnumerable<TicketGestion> getAllBrigades();
+        public IEnumerable<TicketGestion> getAllTicketGestion();
         public Task<TicketGestion> getGestionByIdAsync(Guid id);
         // public Task<brigade> GetBrigadeById(Guid id);
 

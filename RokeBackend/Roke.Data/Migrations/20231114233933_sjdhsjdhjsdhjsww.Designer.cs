@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using RokeBackend.data.DataContext;
 
@@ -11,9 +12,10 @@ using RokeBackend.data.DataContext;
 namespace Roke.Data.Migrations
 {
     [DbContext(typeof(RokeContext))]
-    partial class RokeContextModelSnapshot : ModelSnapshot
+    [Migration("20231114233933_sjdhsjdhjsdhjsww")]
+    partial class sjdhsjdhjsdhjsww
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -342,11 +344,31 @@ namespace Roke.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("InstallDate")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("ItemCode")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Location_Conden")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Location_Evap")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Marca")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Model_Conden")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Model_evap")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -358,6 +380,22 @@ namespace Roke.Data.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("UbicacionInterna")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("area_supply")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("floor_Conden")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("floor_Evap")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("item_type")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 

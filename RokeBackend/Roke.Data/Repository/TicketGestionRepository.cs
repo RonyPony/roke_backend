@@ -3,25 +3,27 @@ using Microsoft.EntityFrameworkCore;
 using Roke.Core.Model;
 using RokeBackend.core.Contracts;
 using RokeBackend.data.DataContext;
-using RokeBackend.core;
 using RokeBackend.Model;
+using RokeBackend.data.DTOs;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Roke.Core.Enums;
+using Roke.Data.DTOs;
+using System.Data.Entity;
 
 namespace RokeBackend.data.Repository
 {
-    public class TicketGestionRepository : ITicektGestionRepository
+    public class TicketGestionRepository : ITicketGestionRepository
     {
         private readonly RokeContext _context;
         public TicketGestionRepository(RokeContext ctx)
         {
             _context = ctx;
+
         }
+
         public async Task<TicketGestion> CreateGestion(TicketGestion Ticket)
         {
             TicketGestion finalTicket = new TicketGestion();
@@ -29,7 +31,7 @@ namespace RokeBackend.data.Repository
             {
                 _context.ticketGestions.Add(Ticket);
                 await _context.SaveChangesAsync();
-                finalTicket= Ticket;
+                finalTicket = Ticket;
                 return finalTicket;
             }
             catch (Exception ex)
@@ -74,7 +76,7 @@ namespace RokeBackend.data.Repository
                 throw;
             }
         }
-        
+
 
         public async Task<int> RemoveGestion(Guid TicketId)
         {
@@ -118,6 +120,6 @@ namespace RokeBackend.data.Repository
 
         }
 
-     
+
     }
 }

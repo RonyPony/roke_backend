@@ -11,7 +11,7 @@ namespace RokeBackend.core.Interface
 {
     public interface IInventoryService
     {
-        public IEnumerable<Inventory> GetAllInventorys();
+        public Task<IEnumerable<InventoryDetails>> getAllInventorys();
         public Task<Inventory> GetInventoryById(Guid id);
       
         public Task<Inventory> SaveInventory(Inventory Inventory);

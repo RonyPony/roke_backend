@@ -40,12 +40,41 @@ namespace RokeBackend.data.Repository
 
       
 
-        public IEnumerable<Inventory> getAllInventorys()
+        public async Task<IEnumerable<InventoryDetails>> getAllInventorys()
         {
+            /* try
+             {
+                 var inventories = _context.Inventories.ToList();
+                 return inventories;
+             }
+             catch (Exception)
+             {
+
+                 throw;
+             }*/
             try
             {
-                var inventories = _context.Inventories.ToList();
-                return inventories;
+                List<Inventory> planning = _context.Inventories.ToList();
+
+                List<InventoryDetails> obj = new List<InventoryDetails>();
+
+                foreach (var item in planning)
+                {
+                    InventoryDetails ob = new InventoryDetails();
+                    location tmpPlan = await _context.location.FindAsync(item.sucursal);
+                    ob.sucursal = tmpPlan.sucursal;
+                    ob.ItemCode = item.ItemCode;
+                    ob.Status = item.Status;
+                    ob.Serial = item.Serial;
+                    ob.UbicacionInterna = item.UbicacionInterna;
+                    ob.Capacidad = item.Capacidad;
+                    ob.Marca = item.Marca;
+                    ob.refrigerante = item.refrigerante;
+                    obj.Add(ob);
+                }
+
+                return obj;
+
             }
             catch (Exception)
             {

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace RokeBackend.core.Contracts
 {
-    public interface ITicektGestionRepository
+    public interface ITicketGestionRepository
     {
 
         public Task<TicketGestion> CreateGestion(TicketGestion data);

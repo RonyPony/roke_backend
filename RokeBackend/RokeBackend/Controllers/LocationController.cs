@@ -19,36 +19,36 @@ namespace RokeBackend.Controllers
     [AllowAnonymous]
     [Route("api/[controller]")]
     [ApiController]
-    public class MediaController : ControllerBase
+    public class LocationController : ControllerBase
     {
-        private readonly IMediaService _MediaService;
+        private readonly ILocationService _LocationService;
         private readonly IConfiguration _Configuration;
 
-        public MediaController(IMediaService LocationService, IConfiguration configuration)
+        public LocationController(ILocationService LocationService, IConfiguration configuration)
         {
-            _MediaService = LocationService;
+            _LocationService = LocationService;
             _Configuration = configuration;
         }
 
 
         // GET: api/<TicketController>
         [HttpGet]
-        public IEnumerable<Media> Get()
+        public IEnumerable<location> Get()
         {
-            return _MediaService.getAllMedias();
+            return _LocationService.GetAllLocations();
         }
 
         // GET api/<TicketController>/5
         [HttpGet("{id}")]
-        public async Task<Media> GetAsync(Guid id)
+        public async Task<location> GetAsync(Guid id)
         {
-            return await _MediaService.getMediaByIdAsync(id);
+            return await _LocationService.GetLocationById(id);
         }
 
-       /* [HttpPost("asign")]
+        [HttpPost("asign")]
         public async Task<LocationMappingDTO> asign([FromBody] LocationMappingDTO value)
         {
-       
+
             foreach (var item in value.idInventary)
             {
                 locationMapping newplan = new locationMapping();
@@ -68,31 +68,37 @@ namespace RokeBackend.Controllers
 
             return value;
         }
-       */
+
 
         // POST api/<TicketController>
         [HttpPost]
-        public async Task<Media> PostAsync([FromBody] MediaDto value)
+        public async Task<location> PostAsync([FromBody] LocationDTO value)
         {
-            Media obj = new Media();
-            obj.photo = value.photo;
-            obj.uploadDate = DateTime.Now;
+            location newLocation = new location();
+            newLocation.sucursal = value.sucursal;
+            newLocation.latitude = value.latitude;
+            newLocation.longitude = value.longitude;
+            newLocation.contactName = value.contactName;
+            newLocation.contactNumber = value.contactNumber;
+            newLocation.contactHasWhatsapp = value.contactHasWhatsapp;
+            newLocation.status = LocationStatus.Active;
 
-            return await _MediaService.CreateMedia(obj);
+
+            return await _LocationService.SaveLocation(newLocation);
         }
 
         // PUT api/<TicketController>/5
         [HttpPut("{id}")]
-        public async Task<Media> PutAsync(int id, [FromBody] Media value)
+        public async Task<location> PutAsync(int id, [FromBody] location value)
         {
-            return await _MediaService.UpdateMedia(value);
+            return await _LocationService.UpdateLocation(value);
         }
 
         // DELETE api/<TicketController>/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteAsync(Guid id)
         {
-            int deleted = await _MediaService.RemoveMedia(id);
+            int deleted = await _LocationService.DeleteLocation(id);
             if (deleted == 0)
             {
                 return BadRequest("Could not delete this ticket");

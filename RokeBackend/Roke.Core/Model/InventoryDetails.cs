@@ -3,13 +3,13 @@ using System.ComponentModel.DataAnnotations;
 
 namespace RokeBackend.Model
 {
-    public class Inventory
+    public class InventoryDetails
     {
         [Key]
         public Guid Id { get; set; }
        
       
-        public Guid sucursal { get; set; }
+        public string sucursal { get; set; }
         public string ItemCode { get; set; }
        // public string InstallDate { get; set; }
        // public string Location_Conden { get; set; }

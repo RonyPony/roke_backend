@@ -9,21 +9,22 @@ using System.Text;
 using System.Threading.Tasks;
 using RokeBackend.core.Contracts;
 using Roke.Core.Model;
-using Roke.Data.DTOs;
-using RokeBackend.data.Repository;
 
 namespace RokeBackend.data.Services
 {
     public class TicketGestionService : ITicketGestionService
     {
-        private readonly TicketGestionRepository _repo;
-        
+        private readonly ITicketGestionRepository _repo;
 
 
-        public TicketGestionService(TicketGestionRepository repo)
+     
+
+
+        public TicketGestionService(ITicketGestionRepository repo)
         {
             _repo = repo;
         }
+
 
         public Task<int> RemoveGestion(Guid TicketId)
         {
@@ -38,7 +39,7 @@ namespace RokeBackend.data.Services
 
         public async Task<TicketGestion> getGestionByIdAsync(Guid id)
         {
-          
+
             return await _repo.getGestionByIdAsync(id);
         }
 
@@ -48,13 +49,13 @@ namespace RokeBackend.data.Services
         {
             return _repo.CreateGestion(Ticket);
         }
-     
+
 
         public async Task<TicketGestion> UpdateGestion(TicketGestion Ticket)
         {
             return await _repo.UpdateGestion(Ticket);
         }
 
- 
+
     }
 }

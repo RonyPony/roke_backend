@@ -37,9 +37,9 @@ namespace RokeBackend.data.Services
 
         }
 
-      
 
-        public IEnumerable<Inventory> GetAllInventorys()
+
+        public Task<IEnumerable<InventoryDetails>> getAllInventorys()
         {
             return _repo.getAllInventorys();
         }

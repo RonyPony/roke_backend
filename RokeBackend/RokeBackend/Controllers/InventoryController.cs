@@ -33,9 +33,9 @@ namespace RokeBackend.Controllers
 
         // GET: api/<TicketController>
         [HttpGet]
-        public IEnumerable<Inventory> Get()
+        public Task<IEnumerable<InventoryDetails>> Get()
         {
-            return _InventoryService.GetAllInventorys();
+            return _InventoryService.getAllInventorys();
         }
 
         // GET api/<TicketController>/5
@@ -57,17 +57,21 @@ namespace RokeBackend.Controllers
             Inventory newIn = new Inventory();
             newIn.sucursal = value.sucursal;
             newIn.ItemCode = value.ItemCode;
-            newIn.InstallDate = value.InstallDate;
-            newIn.Location_Conden = value.Location_Conden;
+          //  newIn.InstallDate = value.InstallDate;
+           // newIn.Location_Conden = value.Location_Conden;
             newIn.Status = Status.Active;
             newIn.Serial = value.Serial;
-            newIn.Location_Evap = value.Location_Evap;
-            newIn.area_supply = value.area_supply;
-            newIn.floor_Conden = value.floor_Conden;
-            newIn.floor_Evap = value.floor_Evap;
-            newIn.Model_Conden = value.Model_Conden;
-            newIn.Model_evap = value.Model_evap;
-            newIn.item_type = value.item_type;
+            newIn.UbicacionInterna = value.UbicacionInterna;
+            newIn.Marca = value.Marca;
+            newIn.Capacidad = value.Capacidad;
+            newIn.refrigerante = value.refrigerante;
+           // newIn.Location_Evap = value.Location_Evap;
+           // newIn.area_supply = value.area_supply;
+           // newIn.floor_Conden = value.floor_Conden;
+            //newIn.floor_Evap = value.floor_Evap;
+            //newIn.Model_Conden = value.Model_Conden;
+            //newIn.Model_evap = value.Model_evap;
+            //newIn.item_type = value.item_type;
 
 
 
@@ -82,17 +86,17 @@ namespace RokeBackend.Controllers
             newIn = await _InventoryService.GetInventoryById(id);
             newIn.sucursal = value.sucursal;
             newIn.ItemCode = value.ItemCode;
-            newIn.InstallDate = value.InstallDate;
-            newIn.Location_Conden = value.Location_Conden;
+            //newIn.InstallDate = value.InstallDate;
+           // newIn.Location_Conden = value.Location_Conden;
             newIn.Status = Status.Active;
             newIn.Serial = value.Serial;
-            newIn.Location_Evap = value.Location_Evap;
-            newIn.area_supply = value.area_supply;
-            newIn.floor_Conden = value.floor_Conden;
-            newIn.floor_Evap = value.floor_Evap;
-            newIn.Model_Conden = value.Model_Conden;
-            newIn.Model_evap = value.Model_evap;
-            newIn.item_type = value.item_type;
+            //newIn.Location_Evap = value.Location_Evap;
+            //newIn.area_supply = value.area_supply;
+            //newIn.floor_Conden = value.floor_Conden;
+            //newIn.floor_Evap = value.floor_Evap;
+            //newIn.Model_Conden = value.Model_Conden;
+            //newIn.Model_evap = value.Model_evap;
+            //newIn.item_type = value.item_type;
 
 
 

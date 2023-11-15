@@ -23,7 +23,7 @@ namespace RokeBackend.core.Contracts
         /// <param name="branch">Branch's request</param>
 
 
-        public IEnumerable<Inventory> getAllInventorys();
+        public Task<IEnumerable<InventoryDetails>> getAllInventorys();
         public Task<Inventory> getInventoryByIdAsync(Guid id);
         public IEnumerable<Inventory> getInventoryByLocationAsync(Guid id);
 

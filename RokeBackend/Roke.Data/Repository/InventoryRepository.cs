@@ -65,7 +65,7 @@ namespace RokeBackend.data.Repository
                     ob.sucursal = tmpPlan.sucursal;
                     ob.ItemCode = item.ItemCode;
                     ob.Status = item.Status;
-                    ob.Serial = item.Serial;
+                    ob.equipo = item.equipo;
                     ob.UbicacionInterna = item.UbicacionInterna;
                     ob.Capacidad = item.Capacidad;
                     ob.Marca = item.Marca;

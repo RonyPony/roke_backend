@@ -60,7 +60,7 @@ namespace RokeBackend.Controllers
           //  newIn.InstallDate = value.InstallDate;
            // newIn.Location_Conden = value.Location_Conden;
             newIn.Status = Status.Active;
-            newIn.Serial = value.Serial;
+            newIn.equipo = value.equipo;
             newIn.UbicacionInterna = value.UbicacionInterna;
             newIn.Marca = value.Marca;
             newIn.Capacidad = value.Capacidad;
@@ -89,7 +89,7 @@ namespace RokeBackend.Controllers
             //newIn.InstallDate = value.InstallDate;
            // newIn.Location_Conden = value.Location_Conden;
             newIn.Status = Status.Active;
-            newIn.Serial = value.Serial;
+            newIn.equipo = value.equipo;
             //newIn.Location_Evap = value.Location_Evap;
             //newIn.area_supply = value.area_supply;
             //newIn.floor_Conden = value.floor_Conden;

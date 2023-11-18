@@ -60,6 +60,8 @@ builder.Services.AddTransient<IFormRepository, FormRepository>();
 builder.Services.AddTransient<IFormService, FormService>();
 builder.Services.AddTransient<ITicketGestionRepository, TicketGestionRepository>();
 builder.Services.AddTransient<ITicketGestionService, TicketGestionService>();
+builder.Services.AddTransient<IFirmaRepository, FirmaRepository>();
+builder.Services.AddTransient<IFirmaService, FirmaService>();
 
 
 

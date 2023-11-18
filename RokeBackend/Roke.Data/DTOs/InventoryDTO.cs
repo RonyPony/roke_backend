@@ -21,7 +21,7 @@ namespace Roke.Data.DTOs
         public string Capacidad { get; set; }
         public string Marca { get; set; }
         public string refrigerante { get; set; }
-        public string Serial { get; set; }
+        public string equipo { get; set; }
         //public string Location_Evap { get; set; }
        // public string area_supply { get; set; }
        // public string floor_Evap { get; set; }

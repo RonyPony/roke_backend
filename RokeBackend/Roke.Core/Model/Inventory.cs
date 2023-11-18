@@ -14,7 +14,7 @@ namespace RokeBackend.Model
        // public string InstallDate { get; set; }
        // public string Location_Conden { get; set; }
         public Status Status { get; set; }
-        public string Serial { get; set; }
+        public string equipo { get; set; }
         public string UbicacionInterna { get; set; }
         public string Capacidad { get; set; }
         public string Marca { get; set; }

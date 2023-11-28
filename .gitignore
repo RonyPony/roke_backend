@@ -8,3 +8,9 @@ RokeBackend/.vs/RokeBackend/v17/.suo
 RokeBackend/.vs/RokeBackend/v17/.suo
 *.dll
 RokeBackend/RokeBackend/obj/Debug/net6.0/RokeBackend.AssemblyInfoInputs.cache
+*.bin
+*.v2
+RokeBackend/.vs/RokeBackend/v17/.suo
+*.dll
+*.pdb
+*.cache

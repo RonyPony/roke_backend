@@ -27,13 +27,11 @@ builder.Services.AddCors(options =>
     options.AddDefaultPolicy(
         builder =>
         {
-            builder.WithOrigins("https://localhost:7070", "http://localhost:4200", "http://69.197.150.152:8012", "http://localhost:8012")
+            builder.WithOrigins("https://localhost:7070", "http://localhost:4200", "http://69.197.150.152:8012", "http://localhost:8012", "http://69.197.150.152:8011")
                                 .AllowAnyHeader()
                                 .AllowAnyMethod();
         });
 });
-
-
 builder.Services.AddTransient<IUserRepository, UserRepository>();
 builder.Services.AddTransient<ITicketRepository, TicketRepository>();
 builder.Services.AddTransient<ITicketService, TicketService>();
